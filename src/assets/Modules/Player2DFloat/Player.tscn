@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://by31dghpf4tb2"]
+
+[ext_resource type="Script" uid="uid://6iiwk5xbp8be" path="res://assets/Modules/Player2DFloat/player.gd" id="1_37qjf"]
+[ext_resource type="Texture2D" uid="uid://dads3pjt584te" path="res://assets/Modules/Player2DFloat/8dir-blackwhite-full.png" id="2_37qjf"]
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_37qjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_37qjf")
+region_enabled = true
+region_rect = Rect2(64, 64, 32, 32)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(3, -15, 8, -13, 13, -8, 15, -3, 15, 3, 13, 8, 8, 13, 3, 15, -3, 15, -8, 13, -13, 8, -15, 3, -15, -3, -13, -8, -8, -13, -3, -15)

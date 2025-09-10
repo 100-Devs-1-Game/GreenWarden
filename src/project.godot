@@ -11,10 +11,18 @@ config_version=5
 [application]
 
 config/name="GreenWarden"
+run/main_scene="uid://ct0ac7s8ewxxg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[gui]
+
+theme/default_font_subpixel_positioning=3
+
 [rendering]
 
+occlusion_culling/bvh_build_quality=0
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true
