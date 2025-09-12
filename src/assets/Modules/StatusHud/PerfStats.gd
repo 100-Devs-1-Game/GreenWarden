@@ -1,11 +1,13 @@
 extends RichTextLabel
 
-@onready var label = $"."
-var fps_samples = []
-var sample_window = 60 * 60  # 60 seconds at 60 FPS
-var poll_interval = 0.25
-var poll_timer = 0
-var peak_fps = 0
+# add signal for toggle here
+
+@onready var label := $"."
+var fps_samples := []
+var sample_window := 60 * 60  # 60 seconds at 60 FPS
+var poll_interval := 0.25
+var poll_timer := 0
+var peak_fps := 0
 
 func is3Dproject() -> bool:
 	if get_viewport().get_camera_3d(): return true
@@ -18,7 +20,7 @@ func _ready() -> void:
 		return
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var fps = Engine.get_frames_per_second()
 	fps_samples.append(fps)
 	if fps > peak_fps:

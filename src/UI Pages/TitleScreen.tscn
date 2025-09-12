@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=3 uid="uid://syv1m1ywqsyv"]
+
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/TitleScreenHandler.gd" id="1_3syvd"]
+[ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
+
+[sub_resource type="FontVariation" id="FontVariation_lj26n"]
+variation_embolden = -0.69
+variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_veqv0"]
+default_font = SubResource("FontVariation_lj26n")
+default_font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_8s8ks"]
+font_size = 80
+font_color = Color(0, 0.772549, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 1, 1, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m260k"]
+font_size = 80
+font_color = Color(0.639216, 0.694118, 0.541176, 1)
+outline_size = 3
+outline_color = Color(0.345098, 0.505882, 0.341176, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_2aydn"]
+variation_embolden = -0.5
+
+[sub_resource type="Theme" id="Theme_uffmt"]
+default_font = SubResource("FontVariation_2aydn")
+default_font_size = 42
+
+[sub_resource type="FontVariation" id="FontVariation_56ut5"]
+variation_face_index = 12
+variation_embolden = -0.69
+variation_transform = Transform2D(1, 0, 0, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_maspa"]
+default_font = SubResource("FontVariation_56ut5")
+default_font_size = 40
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3syvd")
+
+[node name="backgroundColor" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+color = Color(0.140968, 0.422588, 0.279372, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="backgroundColor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -267.5
+offset_top = -207.0
+offset_right = 267.5
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Green" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_veqv0")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/paragraph_spacing = 16
+theme_override_font_sizes/font_size = 2
+text = "Green"
+label_settings = SubResource("LabelSettings_8s8ks")
+vertical_alignment = 1
+structured_text_bidi_override = 5
+
+[node name="Warden" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 100)
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_veqv0")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/paragraph_spacing = 16
+theme_override_font_sizes/font_size = 2
+text = "Warden"
+label_settings = SubResource("LabelSettings_m260k")
+horizontal_alignment = 2
+vertical_alignment = 1
+structured_text_bidi_override = 5
+
+[node name="Play" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uffmt")
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uffmt")
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uffmt")
+text = "CREDITS"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme = SubResource("Theme_maspa")
+text = "EXIT"
+
+[node name="DiscordButton" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+icon = ExtResource("2_d3r25")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="backgroundColor/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="backgroundColor/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="backgroundColor/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="backgroundColor/VBoxContainer/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="backgroundColor/VBoxContainer/HBoxContainer2/DiscordButton" to="." method="_on_discord_button_pressed"]

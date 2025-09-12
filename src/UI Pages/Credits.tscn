@@ -1,0 +1,143 @@
+[gd_scene load_steps=10 format=3 uid="uid://bv7ttycqd5eny"]
+
+[ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="1_k3hvv"]
+
+[sub_resource type="FontVariation" id="FontVariation_ctm0q"]
+variation_embolden = -0.69
+variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_eiaj7"]
+default_font = SubResource("FontVariation_ctm0q")
+default_font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_310ug"]
+font_size = 80
+font_color = Color(0, 0.772549, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 1, 1, 1)
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_16jyl"]
+font_size = 80
+font_color = Color(0.639216, 0.694118, 0.541176, 1)
+outline_size = 3
+outline_color = Color(0.345098, 0.505882, 0.341176, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_2r06h"]
+variation_embolden = -0.5
+
+[sub_resource type="Theme" id="Theme_n13l3"]
+default_font = SubResource("FontVariation_2r06h")
+default_font_size = 42
+
+[sub_resource type="FontVariation" id="FontVariation_jf8mr"]
+variation_face_index = 12
+variation_embolden = -0.69
+variation_transform = Transform2D(1, 0, 0, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_04mls"]
+default_font = SubResource("FontVariation_jf8mr")
+default_font_size = 40
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backgroundColor" type="ColorRect" parent="."]
+texture_filter = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+color = Color(0.140968, 0.422588, 0.279372, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="backgroundColor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -207.0
+offset_right = 249.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="Green" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_eiaj7")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/paragraph_spacing = 16
+theme_override_font_sizes/font_size = 2
+text = "Green"
+label_settings = SubResource("LabelSettings_310ug")
+vertical_alignment = 1
+structured_text_bidi_override = 5
+
+[node name="Warden" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 100)
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_eiaj7")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/paragraph_spacing = 16
+theme_override_font_sizes/font_size = 2
+text = "Warden"
+label_settings = SubResource("LabelSettings_16jyl")
+horizontal_alignment = 2
+vertical_alignment = 1
+structured_text_bidi_override = 5
+
+[node name="Play" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_n13l3")
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_n13l3")
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_n13l3")
+text = "CREDITS"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+theme = SubResource("Theme_04mls")
+text = "EXIT"
+
+[node name="DiscordButton" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(63, 63)
+layout_mode = 2
+icon = ExtResource("1_k3hvv")
+icon_alignment = 1
+expand_icon = true
