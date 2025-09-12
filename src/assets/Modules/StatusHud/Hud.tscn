@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctxex8kottflx"]
 
-[ext_resource type="Script" uid="uid://c2hd0xfi87cdg" path="res://assets/Modules/StatusHud/PerfStats.gd" id="1_hcmlw"]
+[ext_resource type="Script" uid="uid://c2hd0xfi87cdg" path="res://assets/Modules/StatusHud/perf_stats.gd" id="1_hcmlw"]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer"]
 
-[node name="PERFORMANCE_STATS" type="RichTextLabel" parent="."]
+[node name="PerformanceStats" type="RichTextLabel" parent="."]
 offset_left = 5.0
 offset_top = 5.0
 offset_right = 478.0

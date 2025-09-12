@@ -1,27 +1,27 @@
 extends Control
-const invPath = "InventoryContainer/HBoxContainer/VBoxContainer/Inventory"
-var inventorySize = 30
-var hotBarSize = 6
-var activeSlot = 1
-var hotbarContents = []
-var inventoryContents = []
-const defaultSlot = {
+
+const INV_PATH = "InventoryContainer/HBoxContainer/VBoxContainer/Inventory"
+const INVENTORY_SIZE := 30
+const HOTBAR_SIZE := 6
+const DEFAULT_SLOT := {
 	"name": "",
 	"description": "",
 	"icon": "",
 	"ammount": "",
 	"catagory": "",
 	"buyValue": "",
-	"sellValue": ""
+	"sellValue": "",
 }
 
+var inventory_contents := []
+var hotbar_contents := []
+var active_slot := 1
+var labels := []
+
 # INFORMARIONAL
-# The "inventory" InputMap will be used by default for opening the inventory, if not set it defaults to KEY_E
-#
-#
-#
-#
-#
+# The "inventory" InputMap will be used by default for opening the inventory. 
+# if not set, "inventory" defaults to KEY_E
+
 
 func _ready() -> void:
 	adjust_text_color()
@@ -31,33 +31,46 @@ func _ready() -> void:
 		InputMap.add_action("inventory", 0.2)
 		InputMap.action_add_event("inventory", key_E_pressed)
 	
-	for index in range(inventorySize):
-		inventoryContents.append(defaultSlot)
-	for index in range(hotBarSize):
-		hotbarContents.append(defaultSlot)
+	for index in range(INVENTORY_SIZE):
+		inventory_contents.append(DEFAULT_SLOT)
+		
+	for index in range(HOTBAR_SIZE):
+		hotbar_contents.append(DEFAULT_SLOT)
 	
 	var index = -1
-	for row in get_node("%s/grid" % invPath).get_children():
-		if row == get_node("%s/grid/HSeparator" % invPath): continue
+	for row in get_node("%s/Grid" % INV_PATH).get_children():
+		print(row)
+		if row == get_node("%s/Grid/HSeparator" % INV_PATH): 
+			continue
 		for slot in row.get_children():
 			index += 1
-			var button = slot.get_node("interact")
-			var itemCount = slot.get_node("count")
+			var button = slot.get_node("Interact")
+			var item_count = slot.get_node("Count")
 			button.focus_entered.connect(_on_button_pressed.bind(button, index))
 
-var labels: Array = []
 
-func calc_lum(c: float) -> float: return (c / 12.92) if c <= 0.03928 else pow((c + 0.055) / 1.055, 2.4)
-func get_contrast_color(bgColor: Color) -> Color:
-	var r = calc_lum(bgColor.r)
-	var g = calc_lum(bgColor.g)
-	var b = calc_lum(bgColor.b)
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("inventory"):
+		toggle_invintory()
+
+
+func calc_lum(c: float) -> float: 
+	return (c / 12.92) if c <= 0.03928 else pow((c + 0.055) / 1.055, 2.4)
+
+
+func get_contrast_color(background_color: Color) -> Color:
+	var r = calc_lum(background_color.r)
+	var g = calc_lum(background_color.g)
+	var b = calc_lum(background_color.b)
 	var lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+	
+	var contrast_white: float = 1.05 / (lum + 0.05)
+	var contrast_black: float = (lum + 0.05) / 0.05
+	if contrast_white > contrast_black:
+		return Color.WHITE - background_color / 5
+	else: 
+		return Color.BLACK 
 
-	var contrastW = 1.05 / (lum + 0.05)
-	var contrastB = (lum + 0.05) / 0.05
-
-	return (Color.WHITE if contrastW > contrastB else Color.BLACK) - bgColor / 5
 
 func adjust_text_color():
 	labels.clear()
@@ -69,6 +82,7 @@ func adjust_text_color():
 	for label in labels:
 		label.modulate = final
 
+
 func label_scan(node: Node):
 	if node is Label:
 		labels.append(node)
@@ -78,59 +92,21 @@ func label_scan(node: Node):
 
 
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("inventory"):
-		_Toggle_Invintory()
-
 func _on_button_pressed(button: Button, index: int) -> void:
 	button.release_focus()
 	print("button pressed: ", index, " - ", button)
 
 func _on_exitInvintory_pressed():
-	_Toggle_Invintory()
+	toggle_invintory()
 
-func _Toggle_Invintory() -> void:
+func toggle_invintory() -> void:
+	update_inventory_contents()
 	if %InventoryContainer.visible:
-		updateInventoryContents() 
 		%InventoryContainer.hide()
 		%HotbarContainer.show()
 	else:
-		updateInventoryContents()
 		%HotbarContainer.hide()
 		%InventoryContainer.show()
 
-func updateInventoryContents():
+func update_inventory_contents():
 	pass
-
-
-
-
-
-
-var inventory: Array = []
-var slot_limit = 30
-
-func add_item(item):
-	if inventory.size() >= slot_limit:
-		push_warning("Inventory full, cannot add item.")
-		return "full"
-	inventory.append(item)
-	return inventory.size()
-
-func remove_item(item):
-	if item in inventory:
-		inventory.erase(item)
-		return true
-	else:
-		push_warning("Item not found in inventory.")
-		return false
-
-func get_item(index: int):
-	if index >= 0 and index < inventory.size():
-		return inventory[index]
-	else:
-		push_warning("Index out of bounds in get_item.")
-		return null
-
-func get_inventory():
-	return inventory

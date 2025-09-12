@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dads3pjt584te"
-path="res://.godot/imported/8dir-blackwhite-full.png-d3b21ad2a9575fd0f1c54cef2e985007.ctex"
+path="res://.godot/imported/movement_full.png-0921d3fa57f3b6a3fc939d4e56718273.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Modules/Player2DFloat/8dir-blackwhite-full.png"
-dest_files=["res://.godot/imported/8dir-blackwhite-full.png-d3b21ad2a9575fd0f1c54cef2e985007.ctex"]
+source_file="res://assets/Modules/Player2DFloat/movement_full.png"
+dest_files=["res://.godot/imported/movement_full.png-0921d3fa57f3b6a3fc939d4e56718273.ctex"]
 
 [params]
 

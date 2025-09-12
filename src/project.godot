@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GreenWarden"
-run/main_scene="uid://ct0ac7s8ewxxg"
+run/main_scene="uid://syv1m1ywqsyv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

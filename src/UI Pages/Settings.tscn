@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3v3awsu0spbx"]
 
-[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/TitleScreenHandler.gd" id="1_1cdp3"]
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_h8v2w"]
 
-[sub_resource type="FontVariation" id="FontVariation_veqv0"]
+[sub_resource type="FontVariation" id="FontVariation_r17oi"]
 variation_embolden = -0.69
 variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
 
 [sub_resource type="Theme" id="Theme_wvqr3"]
-default_font = SubResource("FontVariation_veqv0")
+default_font = SubResource("FontVariation_r17oi")
 default_font_size = 42
 
 [sub_resource type="LabelSettings" id="LabelSettings_1cdp3"]
@@ -23,9 +23,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_1cdp3")
+script = ExtResource("1_h8v2w")
 
-[node name="backgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="."]
 texture_filter = 1
 layout_mode = 0
 offset_right = 1152.0
@@ -33,7 +33,7 @@ offset_bottom = 648.0
 size_flags_horizontal = 3
 color = Color(0.140968, 0.422588, 0.279372, 1)
 
-[node name="SettingsMenu" type="VBoxContainer" parent="backgroundColor"]
+[node name="SettingsMenu" type="VBoxContainer" parent="BackgroundColor"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SettingsLabel" type="Label" parent="backgroundColor/SettingsMenu"]
+[node name="SettingsLabel" type="Label" parent="BackgroundColor/SettingsMenu"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 79)
 layout_direction = 4
@@ -59,23 +59,23 @@ horizontal_alignment = 1
 vertical_alignment = 1
 structured_text_bidi_override = 5
 
-[node name="HSeparator" type="HSeparator" parent="backgroundColor/SettingsMenu"]
+[node name="HSeparator" type="HSeparator" parent="BackgroundColor/SettingsMenu"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="backgroundColor/SettingsMenu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundColor/SettingsMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="SelectorPanel" type="Panel" parent="backgroundColor/SettingsMenu/HBoxContainer"]
+[node name="SelectorPanel" type="Panel" parent="BackgroundColor/SettingsMenu/HBoxContainer"]
 custom_minimum_size = Vector2(150, 450)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Selector" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel"]
+[node name="Selector" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -85,52 +85,52 @@ offset_right = 70.0
 offset_bottom = 360.0
 grow_horizontal = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Controls" type="Button" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Controls" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Controls"
 
-[node name="KeyMappings" type="Button" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="KeyMappings" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Key-Mappings"
 
-[node name="Audio" type="Button" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Audio" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Audio"
 
-[node name="Video" type="Button" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Video" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Video"
 
-[node name="Graphics" type="Button" parent="backgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Graphics" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Graphics"
 
-[node name="SettingsOptions" type="Panel" parent="backgroundColor/SettingsMenu/HBoxContainer"]
+[node name="SettingsSections" type="Panel" parent="BackgroundColor/SettingsMenu/HBoxContainer"]
 custom_minimum_size = Vector2(650, 450)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Controls" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions"]
+[node name="Controls" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -139,40 +139,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls"]
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls"]
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options"]
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options/O"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="GamePadDeadZone" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options/O"]
+[node name="GamePadDeadZone" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options/O/GamePadDeadZone"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O/GamePadDeadZone"]
 layout_mode = 2
 text = "Deadzone"
 
-[node name="Value" type="TextEdit" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options/O/GamePadDeadZone"]
+[node name="Value" type="TextEdit" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O/GamePadDeadZone"]
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls/Options/O"]
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Controls"]
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="KeyMappings" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions"]
+[node name="KeyMappings" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -181,38 +181,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings"]
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings"]
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options"]
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options/O"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="TBC" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options/O"]
+[node name="TBC" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options/O/TBC"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O/TBC"]
 layout_mode = 2
 
-[node name="Value" type="Node" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options/O/TBC"]
+[node name="Value" type="Node" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O/TBC"]
 
-[node name="Bottom" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings/Options/O"]
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/KeyMappings"]
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Audio" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions"]
+[node name="Audio" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -221,39 +221,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio"]
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio"]
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options"]
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options/O"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="MasterVolume" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options/O"]
+[node name="MasterVolume" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options/O/MasterVolume"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O/MasterVolume"]
 layout_mode = 2
 text = "Master Volume"
 
-[node name="Value" type="HScrollBar" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options/O/MasterVolume"]
+[node name="Value" type="HScrollBar" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O/MasterVolume"]
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio/Options/O"]
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Audio"]
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Video" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions"]
+[node name="Video" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -262,38 +262,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video"]
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video"]
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options"]
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options/O"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="TBC" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options/O"]
+[node name="TBC" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options/O/TBC"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O/TBC"]
 layout_mode = 2
 
-[node name="Value" type="Node" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options/O/TBC"]
+[node name="Value" type="Node" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O/TBC"]
 
-[node name="Bottom" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video/Options/O"]
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Video"]
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Graphics" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions"]
+[node name="Graphics" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -301,96 +301,96 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics"]
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics"]
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options"]
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="DisplayMode" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="DisplayMode" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/DisplayMode"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayMode"]
 layout_mode = 2
 text = "Display Mode"
 
-[node name="Value" type="OptionButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/DisplayMode"]
+[node name="Value" type="OptionButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayMode"]
 layout_mode = 2
 
-[node name="VSyncToggle" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="VSyncToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/VSyncToggle"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VSyncToggle"]
 layout_mode = 2
 text = "V-Sync Enabled"
 
-[node name="Value" type="CheckButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/VSyncToggle"]
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VSyncToggle"]
 layout_mode = 2
 
-[node name="FPSCapToggle" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="FPSCapToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/FPSCapToggle"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSCapToggle"]
 layout_mode = 2
 text = "FPS Cap"
 
-[node name="Value" type="CheckButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/FPSCapToggle"]
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSCapToggle"]
 layout_mode = 2
 
-[node name="FPSLimit" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="FPSLimit" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/FPSLimit"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSLimit"]
 layout_mode = 2
 text = "FPS Limit"
 
-[node name="Value" type="TextEdit" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/FPSLimit"]
+[node name="Value" type="TextEdit" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSLimit"]
 layout_mode = 2
 
-[node name="ShadowsToggle" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="ShadowsToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/ShadowsToggle"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/ShadowsToggle"]
 layout_mode = 2
 text = "Enable Shadows"
 
-[node name="Value" type="CheckButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/ShadowsToggle"]
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/ShadowsToggle"]
 layout_mode = 2
 
-[node name="VolumetricFogToggle" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="VolumetricFogToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/VolumetricFogToggle"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VolumetricFogToggle"]
 layout_mode = 2
 text = "Enable Volumetric Fog"
 
-[node name="Value" type="CheckButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/VolumetricFogToggle"]
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VolumetricFogToggle"]
 layout_mode = 2
 
-[node name="DisplayPerformanceStats" type="HBoxContainer" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="DisplayPerformanceStats" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/DisplayPerformanceStats"]
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayPerformanceStats"]
 layout_mode = 2
 text = "Display Performance"
 
-[node name="Value" type="CheckButton" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O/DisplayPerformanceStats"]
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayPerformanceStats"]
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics/Options/O"]
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="backgroundColor/SettingsMenu/HBoxContainer/SettingsOptions/Graphics"]
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2

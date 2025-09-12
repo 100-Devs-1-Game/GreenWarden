@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://syv1m1ywqsyv"]
 
-[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/TitleScreenHandler.gd" id="1_3syvd"]
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_3syvd"]
 [ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
 
 [sub_resource type="FontVariation" id="FontVariation_lj26n"]
@@ -49,7 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3syvd")
 
-[node name="backgroundColor" type="ColorRect" parent="."]
+[node name="BackgroundColor" type="ColorRect" parent="."]
 texture_filter = 1
 layout_mode = 2
 offset_right = 1152.0
@@ -57,7 +57,7 @@ offset_bottom = 648.0
 size_flags_horizontal = 3
 color = Color(0.140968, 0.422588, 0.279372, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="backgroundColor"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundColor"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -71,11 +71,11 @@ offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="Green" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+[node name="Green" type="Label" parent="BackgroundColor/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
@@ -91,7 +91,7 @@ label_settings = SubResource("LabelSettings_8s8ks")
 vertical_alignment = 1
 structured_text_bidi_override = 5
 
-[node name="Warden" type="Label" parent="backgroundColor/VBoxContainer/HBoxContainer"]
+[node name="Warden" type="Label" parent="BackgroundColor/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 100)
 layout_direction = 4
@@ -109,28 +109,28 @@ horizontal_alignment = 2
 vertical_alignment = 1
 structured_text_bidi_override = 5
 
-[node name="Play" type="Button" parent="backgroundColor/VBoxContainer"]
+[node name="Play" type="Button" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_uffmt")
 text = "PLAY"
 
-[node name="Settings" type="Button" parent="backgroundColor/VBoxContainer"]
+[node name="Settings" type="Button" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_uffmt")
 text = "SETTINGS"
 
-[node name="Credits" type="Button" parent="backgroundColor/VBoxContainer"]
+[node name="Credits" type="Button" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_uffmt")
 text = "CREDITS"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="backgroundColor/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
 
-[node name="Exit" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+[node name="Exit" type="Button" parent="BackgroundColor/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -138,15 +138,15 @@ size_flags_stretch_ratio = 0.7
 theme = SubResource("Theme_maspa")
 text = "EXIT"
 
-[node name="DiscordButton" type="Button" parent="backgroundColor/VBoxContainer/HBoxContainer2"]
+[node name="DiscordButton" type="Button" parent="BackgroundColor/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(63, 63)
 layout_mode = 2
 icon = ExtResource("2_d3r25")
 icon_alignment = 1
 expand_icon = true
 
-[connection signal="pressed" from="backgroundColor/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="backgroundColor/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="backgroundColor/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
-[connection signal="pressed" from="backgroundColor/VBoxContainer/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="backgroundColor/VBoxContainer/HBoxContainer2/DiscordButton" to="." method="_on_discord_button_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/HBoxContainer2/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="BackgroundColor/VBoxContainer/HBoxContainer2/DiscordButton" to="." method="_on_discord_button_pressed"]

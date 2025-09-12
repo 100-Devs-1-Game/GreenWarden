@@ -9,10 +9,14 @@ var poll_interval := 0.25
 var poll_timer := 0
 var peak_fps := 0
 
-func is3Dproject() -> bool:
-	if get_viewport().get_camera_3d(): return true
-	elif get_viewport().get_camera_2d(): return false
-	else: return true if get_tree().current_scene is Node3D else false
+func is_3d_project() -> bool:
+	if get_viewport().get_camera_3d(): 
+		return true
+	elif get_viewport().get_camera_2d(): 
+		return false
+	else: 
+		return true if get_tree().current_scene is Node3D else false
+
 
 func _ready() -> void:
 	if !OS.is_debug_build(): 
@@ -42,7 +46,7 @@ func update_performance_stats():
 	var index_1pct = clamp(int(sorted_samples.size() * 0.01), 0, sorted_samples.size() - 1)
 	var one_pct_low = sorted_samples[index_1pct] if sorted_samples.size() > 0 else 0
 
-	if is3Dproject():
+	if is_3d_project():
 		var tris := get_viewport().get_render_info(Viewport.RENDER_INFO_TYPE_VISIBLE, Viewport.RENDER_INFO_PRIMITIVES_IN_FRAME)
 		var calls := get_viewport().get_render_info(Viewport.RENDER_INFO_TYPE_VISIBLE, Viewport.RENDER_INFO_DRAW_CALLS_IN_FRAME)
 		var objects := get_viewport().get_render_info(Viewport.RENDER_INFO_TYPE_VISIBLE, Viewport.RENDER_INFO_OBJECTS_IN_FRAME)
