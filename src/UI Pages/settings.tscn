@@ -1,0 +1,396 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3v3awsu0spbx"]
+
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_h8v2w"]
+
+[sub_resource type="FontVariation" id="FontVariation_r17oi"]
+variation_embolden = -0.69
+variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
+
+[sub_resource type="Theme" id="Theme_wvqr3"]
+default_font = SubResource("FontVariation_r17oi")
+default_font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_1cdp3"]
+font_size = 38
+font_color = Color(0.810721, 1, 0.663298, 1)
+outline_size = 3
+outline_color = Color(0.345098, 0.505882, 0.341176, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h8v2w")
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+color = Color(0.140968, 0.422588, 0.279372, 1)
+
+[node name="SettingsMenu" type="VBoxContainer" parent="BackgroundColor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsLabel" type="Label" parent="BackgroundColor/SettingsMenu"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 79)
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_wvqr3")
+theme_type_variation = &"HeaderLarge"
+theme_override_constants/paragraph_spacing = 16
+theme_override_font_sizes/font_size = 2
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_1cdp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+structured_text_bidi_override = 5
+
+[node name="HSeparator" type="HSeparator" parent="BackgroundColor/SettingsMenu"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundColor/SettingsMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="SelectorPanel" type="Panel" parent="BackgroundColor/SettingsMenu/HBoxContainer"]
+custom_minimum_size = Vector2(150, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Selector" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -70.0
+offset_right = 70.0
+offset_bottom = 360.0
+grow_horizontal = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Controls" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Controls"
+
+[node name="KeyMappings" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Key-Mappings"
+
+[node name="Audio" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Audio"
+
+[node name="Video" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Video"
+
+[node name="Graphics" type="Button" parent="BackgroundColor/SettingsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Graphics"
+
+[node name="SettingsSections" type="Panel" parent="BackgroundColor/SettingsMenu/HBoxContainer"]
+custom_minimum_size = Vector2(650, 450)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Controls" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options"]
+layout_mode = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="GamePadDeadZone" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O/GamePadDeadZone"]
+layout_mode = 2
+text = "Deadzone"
+
+[node name="Value" type="TextEdit" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O/GamePadDeadZone"]
+layout_mode = 2
+
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Controls"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="KeyMappings" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options"]
+layout_mode = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="TBC" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O/TBC"]
+layout_mode = 2
+
+[node name="Value" type="Node" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O/TBC"]
+
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/KeyMappings"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Audio" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options"]
+layout_mode = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="MasterVolume" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O/MasterVolume"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="Value" type="HScrollBar" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O/MasterVolume"]
+layout_mode = 2
+
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio/Options/O"]
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Audio"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Video" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options"]
+layout_mode = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="TBC" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O/TBC"]
+layout_mode = 2
+
+[node name="Value" type="Node" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O/TBC"]
+
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Video"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Graphics" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="O" type="VBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options"]
+layout_mode = 2
+
+[node name="Top" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="DisplayMode" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayMode"]
+layout_mode = 2
+text = "Display Mode"
+
+[node name="Value" type="OptionButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayMode"]
+layout_mode = 2
+
+[node name="VSyncToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VSyncToggle"]
+layout_mode = 2
+text = "V-Sync Enabled"
+
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VSyncToggle"]
+layout_mode = 2
+
+[node name="FPSCapToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSCapToggle"]
+layout_mode = 2
+text = "FPS Cap"
+
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSCapToggle"]
+layout_mode = 2
+
+[node name="FPSLimit" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSLimit"]
+layout_mode = 2
+text = "FPS Limit"
+
+[node name="Value" type="TextEdit" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/FPSLimit"]
+layout_mode = 2
+
+[node name="ShadowsToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/ShadowsToggle"]
+layout_mode = 2
+text = "Enable Shadows"
+
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/ShadowsToggle"]
+layout_mode = 2
+
+[node name="VolumetricFogToggle" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VolumetricFogToggle"]
+layout_mode = 2
+text = "Enable Volumetric Fog"
+
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/VolumetricFogToggle"]
+layout_mode = 2
+
+[node name="DisplayPerformanceStats" type="HBoxContainer" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayPerformanceStats"]
+layout_mode = 2
+text = "Display Performance"
+
+[node name="Value" type="CheckButton" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O/DisplayPerformanceStats"]
+layout_mode = 2
+
+[node name="Bottom" type="HSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics/Options/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="BackgroundColor/SettingsMenu/HBoxContainer/SettingsSections/Graphics"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
