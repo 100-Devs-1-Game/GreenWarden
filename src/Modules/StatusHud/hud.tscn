@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctxex8kottflx"]
 
-[ext_resource type="Script" uid="uid://c2hd0xfi87cdg" path="res://assets/Modules/StatusHud/perf_stats.gd" id="1_hcmlw"]
+[ext_resource type="Script" uid="uid://c2hd0xfi87cdg" path="res://Modules/StatusHud/perf_stats.gd" id="1_hcmlw"]
 
 [node name="Hud" type="CanvasLayer"]
 

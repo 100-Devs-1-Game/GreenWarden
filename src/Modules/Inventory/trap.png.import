@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d254fatwd3uml"
-path="res://.godot/imported/movement_large.png-9c0706e2f3c7f62cf380a326f1c86218.ctex"
+uid="uid://h2d1dtxhvq4f"
+path="res://.godot/imported/trap.png-32b9bf32c6390cf8d4d96b5e6e15e2ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Modules/Player2DFloat/movement_large.png"
-dest_files=["res://.godot/imported/movement_large.png-9c0706e2f3c7f62cf380a326f1c86218.ctex"]
+source_file="res://Modules/Inventory/trap.png"
+dest_files=["res://.godot/imported/trap.png-32b9bf32c6390cf8d4d96b5e6e15e2ef.ctex"]
 
 [params]
 

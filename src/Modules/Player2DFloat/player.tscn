@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://by31dghpf4tb2"]
 
-[ext_resource type="Script" uid="uid://6iiwk5xbp8be" path="res://assets/Modules/Player2DFloat/player.gd" id="1_37qjf"]
-[ext_resource type="Texture2D" uid="uid://dads3pjt584te" path="res://assets/Modules/Player2DFloat/movement_full.png" id="2_37qjf"]
+[ext_resource type="Script" uid="uid://6iiwk5xbp8be" path="res://Modules/Player2DFloat/player.gd" id="1_37qjf"]
+[ext_resource type="Texture2D" uid="uid://dads3pjt584te" path="res://Modules/Player2DFloat/movement_full.png" id="2_37qjf"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1

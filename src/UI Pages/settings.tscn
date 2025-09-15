@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3v3awsu0spbx"]
 
-[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_h8v2w"]
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UIPages/title_screen_handler.gd" id="1_h8v2w"]
 
 [sub_resource type="FontVariation" id="FontVariation_r17oi"]
 variation_embolden = -0.69

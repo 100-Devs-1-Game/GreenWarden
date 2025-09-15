@@ -14,7 +14,7 @@ builds/
 export.cfg
 export_credentials.cfg
 *.tscn*tmp
-src/addons/godot-git-plugin
+src/addons/
 src/override.cfg
 
 # Imported translations (automatically generated from CSV files)

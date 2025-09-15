@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dss6uju4xkuov"]
 
-[ext_resource type="Script" uid="uid://bag80ntp5uyvi" path="res://assets/Modules/Inventory/inventory.gd" id="1_4ktx7"]
+[ext_resource type="Script" uid="uid://bag80ntp5uyvi" path="res://Modules/Inventory/inventory.gd" id="1_4ktx7"]
 
 [sub_resource type="Theme" id="Theme_j4p0u"]
 default_font_size = 16
@@ -116,6 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -146,6 +147,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -176,6 +178,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -206,6 +209,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -236,6 +240,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -266,6 +271,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -301,6 +307,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -331,6 +338,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -361,6 +369,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -391,6 +400,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -421,6 +431,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -451,6 +462,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -486,6 +498,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -516,6 +529,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -546,6 +560,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -576,6 +591,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -606,6 +622,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -636,6 +653,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -671,6 +689,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -701,6 +720,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -731,6 +751,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -761,6 +782,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -791,6 +813,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -821,6 +844,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
 button_mask = 3
 icon_alignment = 1
 expand_icon = true
@@ -850,7 +874,7 @@ offset_bottom = 18.0
 text = "Hotbar"
 
 [node name="Row5" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
-custom_minimum_size = Vector2(0, 64)
+custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -869,6 +893,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot1"]
 layout_mode = 1
@@ -878,6 +906,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
@@ -895,6 +924,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot2"]
 layout_mode = 1
@@ -904,6 +937,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
@@ -921,6 +955,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot3"]
 layout_mode = 1
@@ -930,6 +968,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
@@ -947,6 +986,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot4"]
 layout_mode = 1
@@ -956,6 +999,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
@@ -973,6 +1017,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot5"]
 layout_mode = 1
@@ -982,6 +1030,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
@@ -999,6 +1048,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+button_mask = 3
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot6"]
 layout_mode = 1
@@ -1008,6 +1061,7 @@ anchor_bottom = 1.0
 offset_top = -23.0
 offset_right = 1.0
 grow_vertical = 0
+label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
 [node name="Bottom" type="HSeparator" parent="InventoryContainer/HBoxContainer/VBoxContainer"]
@@ -1045,6 +1099,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1054,6 +1117,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot1"]
 custom_minimum_size = Vector2(50, 0)
@@ -1077,6 +1143,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1086,6 +1161,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot2"]
 custom_minimum_size = Vector2(50, 0)
@@ -1109,6 +1187,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1118,6 +1205,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot3"]
 custom_minimum_size = Vector2(50, 0)
@@ -1141,6 +1231,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1150,6 +1249,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot4"]
 custom_minimum_size = Vector2(50, 0)
@@ -1173,6 +1275,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1182,6 +1293,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot5"]
 custom_minimum_size = Vector2(50, 0)
@@ -1205,6 +1319,15 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
+[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
 [node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
@@ -1214,6 +1337,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+focus_mode = 0
+icon_alignment = 1
+expand_icon = true
 
 [node name="Count" type="Label" parent="HotbarContainer/Slots/Slot6"]
 custom_minimum_size = Vector2(50, 0)

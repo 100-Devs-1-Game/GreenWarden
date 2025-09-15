@@ -1,7 +1,5 @@
 extends Control
 
-#(get_stack()[0]["source"], " : ", get_stack()[0]["line"], " : ", get_stack()[0]["function"])
-
 func _ready() -> void:
 	pass
 

@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="GreenWarden"
-run/main_scene="uid://syv1m1ywqsyv"
+run/main_scene="uid://dss6uju4xkuov"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [gui]
 

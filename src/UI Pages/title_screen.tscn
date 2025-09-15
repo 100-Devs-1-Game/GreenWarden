@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://syv1m1ywqsyv"]
 
-[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_3syvd"]
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UIPages/title_screen_handler.gd" id="1_3syvd"]
 [ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
 
 [sub_resource type="FontVariation" id="FontVariation_lj26n"]
