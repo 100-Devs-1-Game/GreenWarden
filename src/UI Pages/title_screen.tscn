@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://syv1m1ywqsyv"]
 
-[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UIPages/title_screen_handler.gd" id="1_3syvd"]
+[ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_3syvd"]
 [ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
 
 [sub_resource type="FontVariation" id="FontVariation_lj26n"]
@@ -47,15 +47,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
 script = ExtResource("1_3syvd")
+metadata/_edit_use_anchors_ = true
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 texture_filter = 1
-layout_mode = 2
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 color = Color(0.140968, 0.422588, 0.279372, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BackgroundColor"]
 layout_mode = 1
@@ -73,6 +80,7 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BackgroundColor/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 6
 
 [node name="Green" type="Label" parent="BackgroundColor/VBoxContainer/HBoxContainer"]

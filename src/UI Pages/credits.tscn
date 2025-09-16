@@ -24,13 +24,16 @@ grow_vertical = 2
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 texture_filter = 1
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 color = Color(0.140968, 0.422588, 0.279372, 1)
 
-[node name="CreditsMenu" type="VBoxContainer" parent="BackgroundColor"]
+[node name="CreditsMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -38,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CreditsLabel" type="Label" parent="BackgroundColor/CreditsMenu"]
+[node name="CreditsLabel" type="Label" parent="CreditsMenu"]
 texture_filter = 1
 custom_minimum_size = Vector2(0, 79)
 layout_direction = 4
@@ -56,23 +59,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 structured_text_bidi_override = 5
 
-[node name="HSeparator" type="HSeparator" parent="BackgroundColor/CreditsMenu"]
+[node name="HSeparator" type="HSeparator" parent="CreditsMenu"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BackgroundColor/CreditsMenu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsMenu"]
 layout_mode = 2
 size_flags_horizontal = 4
+size_flags_vertical = 2
 
-[node name="SelectorPanel" type="Panel" parent="BackgroundColor/CreditsMenu/HBoxContainer"]
+[node name="SelectorPanel" type="Panel" parent="CreditsMenu/HBoxContainer"]
 custom_minimum_size = Vector2(150, 450)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Selector" type="VBoxContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/SelectorPanel"]
+[node name="Selector" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/SelectorPanel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -82,31 +86,31 @@ offset_right = 70.0
 offset_bottom = 360.0
 grow_horizontal = 2
 
-[node name="Top" type="HSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Development" type="Button" parent="BackgroundColor/CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Development" type="Button" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Controls"
 
-[node name="Assets" type="Button" parent="BackgroundColor/CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
+[node name="Assets" type="Button" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Key-Mappings"
 
-[node name="CreditSections" type="Panel" parent="BackgroundColor/CreditsMenu/HBoxContainer"]
+[node name="CreditSections" type="Panel" parent="CreditsMenu/HBoxContainer"]
 custom_minimum_size = Vector2(650, 450)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Development" type="HBoxContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections"]
+[node name="Development" type="HBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -115,30 +119,30 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development"]
+[node name="Left" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development"]
+[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development/Options"]
+[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
+[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Development"]
+[node name="Right" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Assets" type="HBoxContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections"]
+[node name="Assets" type="HBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -147,25 +151,25 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets"]
+[node name="Left" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets"]
+[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets/Options"]
+[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options"]
 layout_mode = 2
 
-[node name="Top" type="HSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
+[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="BackgroundColor/CreditsMenu/HBoxContainer/CreditSections/Assets"]
+[node name="Right" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2

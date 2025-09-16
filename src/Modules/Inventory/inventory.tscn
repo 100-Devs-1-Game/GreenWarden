@@ -13,40 +13,52 @@ font_size = 15
 [node name="Inventory" type="Control"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_4ktx7")
 
-[node name="InventoryContainer" type="Panel" parent="."]
-unique_name_in_owner = true
-self_modulate = Color(0, 0, 0, 0.0666667)
-custom_minimum_size = Vector2(422, 368)
+[node name="Container1" type="PanelContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 365.0
-offset_top = 142.0
-offset_right = 787.0
-offset_bottom = 510.0
+offset_left = -211.0
+offset_top = -184.0
+offset_right = 211.0
+offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ExitInvintory" type="Button" parent="InventoryContainer"]
+[node name="InventoryContainer" type="Panel" parent="Container1"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0, 0, 0.0666667)
+custom_minimum_size = Vector2(422, 368)
+layout_mode = 2
+
+[node name="ExitInvintory" type="Button" parent="Container1/InventoryContainer"]
 top_level = true
 layout_mode = 0
-offset_left = 776.0
-offset_top = 127.0
-offset_right = 807.0
-offset_bottom = 158.0
+anchor_left = 0.673611
+anchor_top = 0.195988
+anchor_right = 0.693793
+anchor_bottom = 0.231867
+offset_right = 7.75012
+offset_bottom = 7.74989
 rotation = 6.28319
 scale = Vector2(0.75, 0.75)
 theme = SubResource("Theme_j4p0u")
 action_mode = 0
 text = "X"
+metadata/_edit_use_anchors_ = true
 
-[node name="ColorRect" type="ColorRect" parent="InventoryContainer"]
+[node name="ColorRect" type="ColorRect" parent="Container1/InventoryContainer"]
 self_modulate = Color(1, 1, 1, 0.913725)
 custom_minimum_size = Vector2(412, 360)
 layout_mode = 0
@@ -56,7 +68,7 @@ offset_right = 418.0
 offset_bottom = 204.0
 color = Color(3.46541e-06, 0.826059, 0.944271, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="InventoryContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Container1/InventoryContainer"]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1000
 custom_minimum_size = Vector2(0, 360)
@@ -67,27 +79,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Left" type="VSeparator" parent="InventoryContainer/HBoxContainer"]
+[node name="Left" type="VSeparator" parent="Container1/InventoryContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="InventoryContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Container1/InventoryContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 1002
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Top" type="HSeparator" parent="InventoryContainer/HBoxContainer/VBoxContainer"]
+[node name="Top" type="HSeparator" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Inventory" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer"]
+[node name="Inventory" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer"]
 self_modulate = Color(0, 0.713726, 0.713726, 0)
 custom_minimum_size = Vector2(406, 352)
 layout_mode = 2
 
-[node name="Grid" type="VBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory"]
+[node name="Grid" type="VBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory"]
 custom_minimum_size = Vector2(400, 334)
 layout_mode = 1
 anchors_preset = 15
@@ -96,18 +108,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Row1" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="Row1" type="HBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot1" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot1"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -121,7 +133,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot1"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot1"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -132,13 +144,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot2" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot2"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -152,7 +164,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot2"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -163,13 +175,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot3" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot3"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -183,7 +195,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot3"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot3"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -194,13 +206,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot4" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot4"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -214,7 +226,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot4"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot4"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -225,13 +237,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot5" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot5"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -245,7 +257,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot5"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot5"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -256,13 +268,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
+[node name="Slot6" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot6"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -276,7 +288,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot6"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row1/Slot6"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -287,18 +299,18 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Row2" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="Row2" type="HBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot1" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot1"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -312,7 +324,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot1"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot1"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -323,13 +335,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot2" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot2"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -343,7 +355,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot2"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -354,13 +366,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot3" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot3"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -374,7 +386,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot3"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot3"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -385,13 +397,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot4" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot4"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -405,7 +417,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot4"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot4"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -416,13 +428,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot5" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot5"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -436,7 +448,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot5"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot5"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -447,13 +459,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
+[node name="Slot6" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot6"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -467,7 +479,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot6"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row2/Slot6"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -478,18 +490,18 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Row3" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="Row3" type="HBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot1" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot1"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -503,7 +515,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot1"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot1"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -514,13 +526,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot2" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot2"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -534,7 +546,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot2"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -545,13 +557,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot3" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot3"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -565,7 +577,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot3"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot3"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -576,13 +588,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot4" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot4"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -596,7 +608,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot4"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot4"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -607,13 +619,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot5" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot5"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -627,7 +639,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot5"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot5"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -638,13 +650,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
+[node name="Slot6" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot6"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -658,7 +670,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot6"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row3/Slot6"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -669,18 +681,18 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Row4" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="Row4" type="HBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot1" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot1"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -694,7 +706,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot1"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot1"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -705,13 +717,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot2" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot2"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -725,7 +737,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot2"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -736,13 +748,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot3" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot3"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -756,7 +768,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot3"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot3"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -767,13 +779,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot4" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot4"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -787,7 +799,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot4"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot4"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -798,13 +810,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot5" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot5"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -818,7 +830,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot5"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot5"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -829,13 +841,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
+[node name="Slot6" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot6"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -849,7 +861,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot6"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row4/Slot6"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -860,12 +872,12 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="HSeparator" type="HSeparator" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="HSeparator" type="HSeparator" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/HSeparator"]
+[node name="Label" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/HSeparator"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_top = -5.0
@@ -873,18 +885,18 @@ offset_right = 55.0
 offset_bottom = 18.0
 text = "Hotbar"
 
-[node name="Row5" type="HBoxContainer" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
+[node name="Row5" type="HBoxContainer" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid"]
 custom_minimum_size = Vector2(0, -3.495)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot1" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot1"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -898,7 +910,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot1"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot1"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -909,13 +921,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot2" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot2"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -929,7 +941,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot2"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -940,13 +952,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot3" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot3"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -960,7 +972,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot3"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot3"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -971,13 +983,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot4" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot4"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -991,7 +1003,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot4"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot4"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1002,13 +1014,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot5" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot5"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1022,7 +1034,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot5"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot5"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1033,13 +1045,13 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
+[node name="Slot6" type="Panel" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Interact" type="Button" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot6"]
+[node name="Interact" type="Button" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1053,7 +1065,7 @@ button_mask = 3
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot6"]
+[node name="Count" type="Label" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer/Inventory/Grid/Row5/Slot6"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1064,33 +1076,41 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_gccoy")
 vertical_alignment = 2
 
-[node name="Bottom" type="HSeparator" parent="InventoryContainer/HBoxContainer/VBoxContainer"]
+[node name="Bottom" type="HSeparator" parent="Container1/InventoryContainer/HBoxContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Right" type="VSeparator" parent="InventoryContainer/HBoxContainer"]
+[node name="Right" type="VSeparator" parent="Container1/InventoryContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="HotbarContainer" type="Panel" parent="."]
+[node name="Container2" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -68.0
+offset_right = 195.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HotbarContainer" type="Panel" parent="Container2"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(390, 60)
 layout_mode = 2
-offset_left = 384.0
-offset_top = 576.0
-offset_right = 768.0
-offset_bottom = 636.0
-grow_horizontal = 2
-grow_vertical = 2
 
-[node name="Slots" type="Panel" parent="HotbarContainer"]
+[node name="Slots" type="Panel" parent="Container2/HotbarContainer"]
 custom_minimum_size = Vector2(390, 60)
 layout_mode = 0
 offset_right = 390.0
 offset_bottom = 60.0
 size_flags_vertical = 3
 
-[node name="Slot1" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot1" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1099,7 +1119,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot1"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1108,7 +1128,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot1"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot1"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1121,7 +1141,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot1"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot1"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1133,7 +1153,7 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Slot2" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot2" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1143,7 +1163,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot2"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1152,7 +1172,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot2"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot2"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1165,7 +1185,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot2"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1177,7 +1197,7 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Slot3" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot3" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1187,7 +1207,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot3"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1196,7 +1216,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot3"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot3"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1209,7 +1229,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot3"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot3"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1221,7 +1241,7 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Slot4" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot4" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1231,7 +1251,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot4"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1240,7 +1260,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot4"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot4"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1253,7 +1273,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot4"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot4"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1265,7 +1285,7 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Slot5" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot5" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1275,7 +1295,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot5"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1284,7 +1304,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot5"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot5"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1297,7 +1317,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot5"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot5"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1309,7 +1329,7 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Slot6" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Slot6" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -1319,7 +1339,7 @@ offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 20.0
 
-[node name="Coloring" type="ColorRect" parent="HotbarContainer/Slots/Slot6"]
+[node name="Coloring" type="ColorRect" parent="Container2/HotbarContainer/Slots/Slot6"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1328,7 +1348,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="Interact" type="Button" parent="HotbarContainer/Slots/Slot6"]
+[node name="Interact" type="Button" parent="Container2/HotbarContainer/Slots/Slot6"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 1
 anchors_preset = 15
@@ -1341,7 +1361,7 @@ focus_mode = 0
 icon_alignment = 1
 expand_icon = true
 
-[node name="Count" type="Label" parent="HotbarContainer/Slots/Slot6"]
+[node name="Count" type="Label" parent="Container2/HotbarContainer/Slots/Slot6"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 1
 anchors_preset = 2
@@ -1353,10 +1373,10 @@ grow_vertical = 0
 label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
-[node name="Gap" type="Panel" parent="HotbarContainer/Slots"]
+[node name="Gap" type="Panel" parent="Container2/HotbarContainer/Slots"]
 layout_mode = 2
 offset_left = 384.0
 offset_right = 384.0
 offset_bottom = 60.0
 
-[connection signal="pressed" from="InventoryContainer/ExitInvintory" to="." method="_on_exitInvintory_pressed"]
+[connection signal="pressed" from="Container1/InventoryContainer/ExitInvintory" to="." method="_on_exitInvintory_pressed"]

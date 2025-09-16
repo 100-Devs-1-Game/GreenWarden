@@ -1,7 +1,8 @@
 extends Control
 
-@onready var SaveLoad = preload("res://Modules/SaveLoad/save_manager.gd")
+@onready var SaveLoad = preload("res://Modules/SaveLoad/save_manager.gd").new()
 
+const INVENTORY_FILE_PATH = "user://inventory.save"
 const INV_PATH = "InventoryContainer/HBoxContainer/VBoxContainer/Inventory"
 const INVENTORY_SIZE := 30
 const HOTBAR_SIZE := 6
@@ -53,8 +54,8 @@ var randslots := [
 
 var inventory_contents := []
 var cursor_contents := {}
-var clicked_slots := []
 var active_slot := 0
+var slots_queue := []
 
 # INFORMARIONAL
 # The "inventory" InputMap will be used by default for opening the inventory. 
@@ -90,12 +91,15 @@ func _ready() -> void:
 		var button = slot.get_node("Interact")
 		button.pressed.connect(_on_hotbar_slot_pressed.bind(slot, index))
 	
-	inventory_contents[randi_range(0,30)] = randslots[0]
-	inventory_contents[randi_range(0,30)] = randslots[1]
-	inventory_contents[randi_range(0,30)] = randslots[2]
-	inventory_contents[randi_range(0,30)] = randslots[3]
+	inventory_contents[randi_range(0,29)] = randslots[0]
+	inventory_contents[randi_range(0,29)] = randslots[1]
+	inventory_contents[randi_range(0,29)] = randslots[2]
+	inventory_contents[randi_range(0,29)] = randslots[3]
 	
 	cursor_contents = DEFAULT_SLOT
+	
+	
+	inventory_contents = SaveLoad.load_value(INVENTORY_FILE_PATH, "content", inventory_contents)
 	refresh_visuals()
 
 
@@ -105,11 +109,13 @@ func _process(_delta: float) -> void:
 
 
 func _on_inventory_slot_pressed(button: Panel, index: int) -> void:
-	if len(clicked_slots) >= 8:
-		for i in [1,2]:
-			clicked_slots.pop_front()
+	if len(slots_queue) >= 2:
+		slots_queue.clear()
+	slots_queue.append(index)
 	
-	clicked_slots.append(index)
+	if len(slots_queue) == 2:
+		swap_slot_to_slot(slots_queue[0], slots_queue[1])
+	
 	print("button pressed: ", index, " - ", button)
 
 
@@ -168,6 +174,7 @@ func label_scan(node: Node) -> void:
 
 
 func toggle_invintory() -> void:
+	undo_cursor_grab()
 	refresh_visuals()
 	if %InventoryContainer.visible:
 		%InventoryContainer.hide()
@@ -226,18 +233,51 @@ func refresh_visuals() -> void:
 		count.text = "" if slot_data["amount"] == 0 else (
 				str(roundi(slot_data["amount"]))
 		)
+		
+	SaveLoad.save_value(INVENTORY_FILE_PATH, "content", inventory_contents)
+
+
+
+func get_first_open_index() -> int:
+	for i in range(INVENTORY_SIZE):
+		if inventory_contents[i] == DEFAULT_SLOT:
+			return i
+	return -1
 
 
 func swap_slot_to_cursor(index: int):
+	if not (len(index) >= 0 or len(index) <= INVENTORY_SIZE):
+		return
+	
 	var temp: Dictionary = inventory_contents[index]
 	inventory_contents[index] = cursor_contents
 	cursor_contents = temp
 
 
+func swap_slot_to_slot(indexa: int, indexb: int):
+	if not (indexa >= 0 or indexa <= INVENTORY_SIZE):
+		return
+	if not (indexb >= 0 or indexb <= INVENTORY_SIZE):
+		return
+	
+	var temp: Dictionary = inventory_contents[indexa]
+	inventory_contents[indexa] = inventory_contents[indexb]
+	inventory_contents[indexb] = temp
+	
+	refresh_visuals()
+
+
+func undo_cursor_grab() -> void:
+	if cursor_contents != DEFAULT_SLOT:
+		inventory_contents[get_first_open_index()] = cursor_contents
+	cursor_contents = DEFAULT_SLOT.duplicate(true)
+	slots_queue.clear()
+
+
+
 # TODO drag and drop items (visual more than anything)
 # TODO grab half right click (grabs half or close and puts it on the cursor)
 # TODO place half right click (conditional slot empty
-# TODO Item swapping (dragging one item onto another slot swaps them)
 # should i make it so it just swaps from the cursor not between both slots?
 # TODO Shift-click move (quick move between inventory and hotbar or chests)
 # TODO Alt-click use/equip (consumables, tools, equipable items)
