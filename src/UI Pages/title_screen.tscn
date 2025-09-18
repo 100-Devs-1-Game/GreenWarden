@@ -1,7 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://syv1m1ywqsyv"]
+[gd_scene load_steps=12 format=3 uid="uid://syv1m1ywqsyv"]
 
 [ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_3syvd"]
 [ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
+[ext_resource type="FontVariation" uid="uid://dnbm6nie8ptyb" path="res://UI Pages/Fonts/title_button.tres" id="2_g6g3x"]
+[ext_resource type="FontVariation" uid="uid://bo0wwhcetr2pk" path="res://UI Pages/Fonts/title_name_darkgreen.tres" id="2_wf7w6"]
+[ext_resource type="FontVariation" uid="uid://dkdqu3a6vb1rd" path="res://UI Pages/Fonts/title_name_lightgreen.tres" id="3_wk00t"]
 
 [sub_resource type="FontVariation" id="FontVariation_lj26n"]
 variation_embolden = -0.69
@@ -11,39 +14,27 @@ variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
 default_font = SubResource("FontVariation_lj26n")
 default_font_size = 42
 
-[sub_resource type="FontVariation" id="FontVariation_t6v46"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_8s8ks"]
-font = SubResource("FontVariation_t6v46")
+font = ExtResource("2_wf7w6")
 font_size = 80
 font_color = Color(0, 0.772549, 0, 1)
 shadow_size = 2
 shadow_color = Color(0, 1, 1, 1)
 shadow_offset = Vector2(0, 0)
 
-[sub_resource type="FontVariation" id="FontVariation_g6g3x"]
-
 [sub_resource type="LabelSettings" id="LabelSettings_m260k"]
-font = SubResource("FontVariation_g6g3x")
+font = ExtResource("3_wk00t")
 font_size = 80
 font_color = Color(0.639216, 0.694118, 0.541176, 1)
 outline_size = 3
 outline_color = Color(0.345098, 0.505882, 0.341176, 1)
 
-[sub_resource type="FontVariation" id="FontVariation_2aydn"]
-variation_embolden = -0.5
-
 [sub_resource type="Theme" id="Theme_uffmt"]
-default_font = SubResource("FontVariation_2aydn")
+default_font = ExtResource("2_g6g3x")
 default_font_size = 42
 
-[sub_resource type="FontVariation" id="FontVariation_56ut5"]
-variation_face_index = 12
-variation_embolden = -0.69
-variation_transform = Transform2D(1, 0, 0, 1, 1, 0)
-
 [sub_resource type="Theme" id="Theme_maspa"]
-default_font = SubResource("FontVariation_56ut5")
+default_font = ExtResource("2_g6g3x")
 default_font_size = 40
 
 [node name="Control" type="Control"]

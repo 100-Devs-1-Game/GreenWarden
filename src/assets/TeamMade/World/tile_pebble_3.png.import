@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fl2xeq5c24u3"
-path="res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex"
+uid="uid://cg4c664danmtb"
+path="res://.godot/imported/tile_pebble_3.png-8f6ec6936c9da2c0d315bfbe2a779ffa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icon.png"
-dest_files=["res://.godot/imported/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.ctex"]
+source_file="res://assets/TeamMade/World/tile_pebble_3.png"
+dest_files=["res://.godot/imported/tile_pebble_3.png-8f6ec6936c9da2c0d315bfbe2a779ffa.ctex"]
 
 [params]
 

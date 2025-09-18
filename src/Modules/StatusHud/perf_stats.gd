@@ -52,7 +52,7 @@ func _update_performance_stats() -> void:
 	if fps_samples.size() > sample_window:
 		fps_samples.pop_front()
 
-	var total_fps: int = fps_samples.reduce(func(a, b): return a + b, 0)
+	var total_fps: int = fps_samples.reduce(func(a: int, b: int) -> int: return a + b, 0)
 	var avg_fps: float = (total_fps / float(fps_samples.size())) if fps_samples.size() > 0 else 0.0
 
 	var sorted_samples: Array = fps_samples.duplicate()
@@ -72,24 +72,32 @@ func _update_performance_stats() -> void:
 			Viewport.RENDER_INFO_TYPE_VISIBLE, Viewport.RENDER_INFO_OBJECTS_IN_FRAME
 		)
 
-		text = str([
-			"FPS: %.1f" % fps,
-			"Peak FPS: %.1f" % peak_fps,
-			"Avg FPS: %.1f" % avg_fps,
-			"1%% Low: %.1f" % one_pct_low,
-			"Frame Time: %.2f ms" % frame_time,
-			"Tris: %d" % tris,
-			"Objects: %d" % objects,
-			"Draw Calls: %d" % calls,
-			"Mem: %.1f MB" % memory_usage
-		])
+		var contents: String = ""
+		for line: String in [
+			"FPS: %.0f" % fps,
+			"\nPeak FPS: %.0f" % peak_fps,
+			"\nAvg FPS: %.1f" % avg_fps,
+			"\n1%% Low: %.0f" % one_pct_low,
+			"\nFrame Time: %.2f ms" % frame_time,
+			"\nTris: %d" % tris,
+			"\nObjects: %d" % objects,
+			"\nDraw Calls: %d" % calls,
+			"\nMem: %.1f MB" % memory_usage
+		]:
+			print(contents.insert(-1, line))
+		text = contents
+		print(contents)
 
 	else:
-		text = str([
-			"FPS: %.1f" % fps,
-			"Peak FPS: %.1f" % peak_fps,
-			"Avg FPS: %.1f" % avg_fps,
-			"1%% Low: %.1f" % one_pct_low,
-			"Frame Time: %.2f ms" % frame_time,
-			"Mem: %.1f MB" % memory_usage
-		])
+		var contents: String = ""
+		for line: String in [
+			"FPS: %.0f" % fps,
+			"\nPeak FPS: %.0f" % peak_fps,
+			"\nAvg FPS: %.1f" % avg_fps,
+			"\n1%% Low: %.0f" % one_pct_low,
+			"\nFrame Time: %.2f ms" % frame_time,
+			"\nMem: %.1f MB" % memory_usage
+		]:
+			print(contents.insert(-1, line))
+		text = contents
+		print(contents)
