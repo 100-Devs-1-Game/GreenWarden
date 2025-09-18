@@ -3,9 +3,6 @@ extends Node
 # TODO figure out what groups credits should split into
 # TODO figure out final credits to display
 
-@onready var SaveLoad = preload("res://Modules/SaveLoad/save_manager.gd").new()
-
-
 func _ready() -> void:
 	if not InputMap.has_action("menu_exit"):
 		var key_pressed = InputEventKey.new()
@@ -13,18 +10,19 @@ func _ready() -> void:
 		InputMap.add_action("menu_exit", 0.2)
 		InputMap.action_add_event("menu_exit", key_pressed)
 	
-	var no_category = get_node("CreditsMenu/HBoxContainer/SelectorPanel/Selector/Top")
 	for category in get_node("CreditsMenu/HBoxContainer/SelectorPanel/Selector").get_children():
-		if category == no_category:
+		if category.name == "Top":
 			continue
-		category.pressed.connect(_on_category_pressed.bind(category.name))
+		category.pressed.connect(_on_category_pressed.bind(category))
+	
+	# the default category or section 
+	_on_category_pressed(get_node("CreditsMenu/HBoxContainer/CreditSections/OtherCredits"))
 
 
-func _on_category_pressed(category: String) -> void:
-	if category == "ToTitle":
+func _on_category_pressed(category: Node) -> void:
+	if category.name == "ToTitle":
 		get_tree().change_scene_to_file("res://UI Pages/title_screen.tscn")
-	var sections = get_node("CreditsMenu/HBoxContainer/CreditsSections").get_children()
-	for section in sections:
-		section.visible = false
-		if section.name == category:
-			section.visible = true
+		
+	var sections = get_node("CreditsMenu/HBoxContainer/CreditSections")
+	for section in sections.get_children():
+		section.visible = true if category.name == section.name else false

@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://df787lr0pvamg"]
+[gd_scene load_steps=5 format=3 uid="uid://df787lr0pvamg"]
+
+[ext_resource type="Script" uid="uid://63aesuh3oett" path="res://UI Pages/credits_handler.gd" id="1_lwm0d"]
 
 [sub_resource type="FontVariation" id="FontVariation_veqv0"]
 variation_embolden = -0.69
@@ -21,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lwm0d")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 texture_filter = 1
@@ -60,7 +63,7 @@ theme = SubResource("Theme_xipy8")
 theme_type_variation = &"HeaderLarge"
 theme_override_constants/paragraph_spacing = 16
 theme_override_font_sizes/font_size = 2
-text = "SETTINGS"
+text = "CREDITS"
 label_settings = SubResource("LabelSettings_lwm0d")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -99,14 +102,22 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Controls"
+text = "Development"
 
 [node name="Assets" type="Button" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Key-Mappings"
+text = "Assets
+"
+
+[node name="OtherCredits" type="Button" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Other Credits"
 
 [node name="ToTitle" type="Button" parent="CreditsMenu/HBoxContainer/SelectorPanel/Selector"]
 layout_mode = 2
@@ -131,18 +142,27 @@ grow_vertical = 2
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development"]
+[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development"]
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options"]
-layout_mode = 2
-
-[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/Options/O"]
+[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Development/O"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Contents" type="RichTextLabel" parent="CreditsMenu/HBoxContainer/CreditSections/Development/O/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "This would be where you put all of your credits for who developed the game and what, among other things that you can choose."
+
+[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Development/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
@@ -163,21 +183,72 @@ grow_vertical = 2
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
+[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
 
-[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options"]
-layout_mode = 2
-
-[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/Options/O"]
+[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/O"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/O/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "If more than one person or many people's assets were used you can list who made what or if there aren't many, you can use the Development tab.
+
+If there are external assets you can list the license's and any credits here also."
+
+[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets/O"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="Right" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/Assets"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="OtherCredits" type="HBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="O" type="VBoxContainer" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Top" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Options" type="ScrollContainer" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits/O"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits/O/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "If you want to make any more sections just duplicate the Assets section or repurpose this one. The same goes with the Tab Button for the section you create, although you could just as well make your own but it may not have the same spacing or size.
+
+Keep in mind that you should keep the names of the Button node used for the tab and the sections' names the same, if not the automation I have for sending you to the right tab will break and error out.
+
+Also, in the credits_handler.gd make sure to change the title screen node path to your own."
+
+[node name="Bottom" type="HSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits/O"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Right" type="VSeparator" parent="CreditsMenu/HBoxContainer/CreditSections/OtherCredits"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
