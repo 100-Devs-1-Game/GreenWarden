@@ -1113,7 +1113,7 @@ size_flags_vertical = 3
 [node name="Slot1" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
 size_flags_horizontal = 3
@@ -1156,7 +1156,7 @@ vertical_alignment = 2
 [node name="Slot2" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 66.0
 offset_right = 126.0
 offset_bottom = 60.0
@@ -1200,7 +1200,7 @@ vertical_alignment = 2
 [node name="Slot3" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 132.0
 offset_right = 192.0
 offset_bottom = 60.0
@@ -1244,7 +1244,7 @@ vertical_alignment = 2
 [node name="Slot4" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 198.0
 offset_right = 258.0
 offset_bottom = 60.0
@@ -1288,7 +1288,7 @@ vertical_alignment = 2
 [node name="Slot5" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 264.0
 offset_right = 324.0
 offset_bottom = 60.0
@@ -1332,7 +1332,7 @@ vertical_alignment = 2
 [node name="Slot6" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 330.0
 offset_right = 390.0
 offset_bottom = 60.0
@@ -1374,7 +1374,7 @@ label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
 [node name="Gap" type="Panel" parent="Container2/HotbarContainer/Slots"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 384.0
 offset_right = 384.0
 offset_bottom = 60.0
