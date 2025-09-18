@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://devqscvox6l7h"
-path="res://.godot/imported/wheat.png-b8377d07d0ae7cc124d12ccd5e469381.ctex"
+uid="uid://cyksf5fvqkey1"
+path="res://.godot/imported/tile_grass_1.png-ff0fa8d3d72cf0e264da0e9eeb156ccf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modules/Inventory/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-b8377d07d0ae7cc124d12ccd5e469381.ctex"]
+source_file="res://assets/World/tile_grass_1.png"
+dest_files=["res://.godot/imported/tile_grass_1.png-ff0fa8d3d72cf0e264da0e9eeb156ccf.ctex"]
 
 [params]
 
