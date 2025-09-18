@@ -10,9 +10,18 @@ config_version=5
 
 [application]
 
-config/name="GreenWarden"
-run/main_scene="uid://dss6uju4xkuov"
+config/name="GreenWarden (4.4)"
+run/main_scene="uid://syv1m1ywqsyv"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+config/icon="uid://cmfoocp1i8x7q"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1152
+window/size/window_height_override=648
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -20,7 +29,11 @@ enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
 
 [gui]
 
-theme/default_font_subpixel_positioning=3
+theme/default_font_multichannel_signed_distance_field=true
+
+[memory]
+
+limits/message_queue/max_size_mb=50
 
 [rendering]
 
@@ -28,4 +41,6 @@ occlusion_culling/bvh_build_quality=0
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/decals/filter=2
+textures/light_projectors/filter=2
 occlusion_culling/use_occlusion_culling=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://syv1m1ywqsyv"]
+[gd_scene load_steps=13 format=3 uid="uid://syv1m1ywqsyv"]
 
 [ext_resource type="Script" uid="uid://vu0bph5kvxao" path="res://UI Pages/title_screen_handler.gd" id="1_3syvd"]
 [ext_resource type="Texture2D" uid="uid://cy2ww4pgorbrc" path="res://assets/LogoRedTrans.png" id="2_d3r25"]
@@ -11,14 +11,20 @@ variation_transform = Transform2D(1.1, 0, 0, 1, 1, 0)
 default_font = SubResource("FontVariation_lj26n")
 default_font_size = 42
 
+[sub_resource type="FontVariation" id="FontVariation_t6v46"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_8s8ks"]
+font = SubResource("FontVariation_t6v46")
 font_size = 80
 font_color = Color(0, 0.772549, 0, 1)
 shadow_size = 2
 shadow_color = Color(0, 1, 1, 1)
 shadow_offset = Vector2(0, 0)
 
+[sub_resource type="FontVariation" id="FontVariation_g6g3x"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_m260k"]
+font = SubResource("FontVariation_g6g3x")
 font_size = 80
 font_color = Color(0.639216, 0.694118, 0.541176, 1)
 outline_size = 3
@@ -71,9 +77,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -267.5
+offset_left = -272.0
 offset_top = -207.0
-offset_right = 267.5
+offset_right = 272.0
 offset_bottom = 207.0
 grow_horizontal = 2
 grow_vertical = 2

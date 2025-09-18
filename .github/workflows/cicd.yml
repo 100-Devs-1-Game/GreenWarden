@@ -41,14 +41,21 @@ jobs:
           tag: ${{ github.ref_name }}
           artifacts: ${{ steps.build.outputs.archive_directory }}/**/*.zip
           allowUpdates: true
-  
-      - name: Make get_butler.sh executable
-        run: chmod +x ./get_butler.sh  
 
+      # Download Butler binary
+      - name: Setup Butler
+        run: |
+          mkdir -p .github/scripts
+          wget -q -O .github/scripts/butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip -o .github/scripts/butler.zip -d .github/scripts
+          chmod +x .github/scripts/butler
+          echo "$GITHUB_WORKSPACE/.github/scripts" >> $GITHUB_PATH
+
+      # Push to itch.io
       - name: Deploy to itch.io
         run: |
-          ./get_butler.sh
-          BUTLER_API_KEY=${{ secrets.BUTLER_API_KEY }} ./butler --verbose push \
+          butler --version
+          BUTLER_API_KEY=${{ secrets.BUTLER_API_KEY }} butler --verbose push \
             "${{ steps.build.outputs.build_directory }}/web_release" \
             "${{ vars.ITCHIO_USERNAME }}/${{ vars.ITCHIO_GAME }}:web"
 

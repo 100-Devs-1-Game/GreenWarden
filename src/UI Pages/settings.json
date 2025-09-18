@@ -1,0 +1,42 @@
+{
+    "Control": {
+        "Invert Camera Pan": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Camera Pan Speed": {"Value": 0,"NodeSettings": {"Node": "", "a": "b"}},
+        "Camera Zoom Speed": {"Value": 0,"NodeSettings": {"Node": "", "a": "b"}},
+        "Screen Shake": {"Value": 0,"NodeSettings": {"Node": "", "a": "b"}},
+        "Screen Flash Intensity": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}}
+    }, "KeyMapping": {
+        "Movement Keys": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Interact Key": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Use Tool / Attack": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Inventory Menu": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Switch Tool / Item": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Pause / Settings": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}}
+    }, "Audio": {
+        "Master Volume": {"Value": 0,"NodeSettings": {"Node": "", "a": "b"}},
+        "Music Volume": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Effects Volume": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Ambient Volume": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Dialogue Volume": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Mute on Focus Loss": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}}
+    }, "Video": {
+        "Resolution": {"Value": 0,"NodeSettings": {"Node": "", "a": "b"}},
+        "Fullscreen / Windowed / Borderless": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Brightness / Gamma": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "UI Scale": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "VSync": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Frame Rate Cap": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "FPS Counter": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}}
+    }, "Graphics": {
+        "Lighting Quality": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Shadow Quality": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Particle Effects": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Outline Toggle": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Post-Processing": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Animation Smoothing": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Pixel Filter / Upscaling": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Colorblind Mode": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Weather Effects": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}},
+        "Environmental Detail Level": {"Value": 0, "NodeSettings": {"Node": "", "a": "b"}}
+    }
+}
