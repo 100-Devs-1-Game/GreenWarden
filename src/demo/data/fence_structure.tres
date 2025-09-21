@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StructureType" load_steps=3 format=3 uid="uid://n3bif2f645un"]
+
+[ext_resource type="Script" uid="uid://cjnnt4iqvl11g" path="res://demo/structures/structure_type.gd" id="1_ep3bg"]
+[ext_resource type="PackedScene" uid="uid://cff7qpua0i354" path="res://demo/structures/scenes/fence.tscn" id="2_tefnv"]
+
+[resource]
+script = ExtResource("1_ep3bg")
+structure_scene = ExtResource("2_tefnv")
+metadata/_custom_type_script = "uid://cjnnt4iqvl11g"

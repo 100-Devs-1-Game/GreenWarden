@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StructureType" load_steps=3 format=3 uid="uid://bb34wg08nlpno"]
+
+[ext_resource type="Script" uid="uid://cjnnt4iqvl11g" path="res://demo/structures/structure_type.gd" id="1_p5q2w"]
+[ext_resource type="PackedScene" uid="uid://cgalvgmpu8qdk" path="res://demo/structures/scenes/spike_trap.tscn" id="2_bt3c5"]
+
+[resource]
+script = ExtResource("1_p5q2w")
+structure_scene = ExtResource("2_bt3c5")
+blocks_path = false
+metadata/_custom_type_script = "uid://cjnnt4iqvl11g"
