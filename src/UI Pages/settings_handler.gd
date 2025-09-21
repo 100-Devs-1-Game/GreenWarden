@@ -3,20 +3,22 @@ extends Node
 # TODO make settings savable
 # TODO figure out final settings options
 
-@onready var SaveLoad = preload("res://Modules/SaveLoad/save_manager.gd").new()
+@onready var SaveLoad: Node = preload("res://Modules/SaveLoad/save_manager.gd").new()
 
 
 func _ready() -> void:
 	if not InputMap.has_action("menu_exit"):
-		var key_pressed = InputEventKey.new()
+		var key_pressed: InputEventKey = InputEventKey.new()
 		key_pressed.physical_keycode = KEY_ESCAPE
 		InputMap.add_action("menu_exit", 0.2)
 		InputMap.action_add_event("menu_exit", key_pressed)
 	
-	for category in get_node("SettingsMenu/HBoxContainer/SelectorPanel/Selector").get_children():
+	for category: Node in get_node("SettingsMenu/HBoxContainer/SelectorPanel/Selector").get_children():
 		if category.name == "Top":
 			continue
-		category.pressed.connect(_on_category_pressed.bind(category))
+		var err: int = (category as Button).pressed.connect(_on_category_pressed.bind(category))
+		if err != OK:
+			push_error("Failed to connect pressed signal: %s" % err)
 	
 	_on_category_pressed(get_node("SettingsMenu/HBoxContainer/SettingsSections/Controls"))
 
@@ -26,14 +28,16 @@ func _on_category_pressed(category: Node) -> void:
 		save_settings()
 		
 	if category.name == "ToTitle":
-		get_tree().change_scene_to_file("res://UI Pages/title_screen.tscn")
+		var err: int = get_tree().change_scene_to_file("res://UI Pages/title_screen.tscn")
+		if err != OK:
+			push_error("failed to change to Title scene: %s" % err)
 		
-	var sections = get_node("SettingsMenu/HBoxContainer/SettingsSections")
-	for section in sections.get_children():
+	var sections: Panel = get_node("SettingsMenu/HBoxContainer/SettingsSections")
+	for section: HBoxContainer in sections.get_children():
 		section.visible = true if category.name == section.name else false
 
 
-func save_settings():
+func save_settings() -> void:
 	pass
 
 

@@ -72,32 +72,26 @@ func _update_performance_stats() -> void:
 			Viewport.RENDER_INFO_TYPE_VISIBLE, Viewport.RENDER_INFO_OBJECTS_IN_FRAME
 		)
 
-		var contents: String = ""
-		for line: String in [
+		var contents: String = str([
 			"FPS: %.0f" % fps,
-			"\nPeak FPS: %.0f" % peak_fps,
-			"\nAvg FPS: %.1f" % avg_fps,
-			"\n1%% Low: %.0f" % one_pct_low,
-			"\nFrame Time: %.2f ms" % frame_time,
-			"\nTris: %d" % tris,
-			"\nObjects: %d" % objects,
-			"\nDraw Calls: %d" % calls,
-			"\nMem: %.1f MB" % memory_usage
-		]:
-			print(contents.insert(-1, line))
+			"|Peak FPS: %.0f" % peak_fps,
+			"|Avg FPS: %.1f" % avg_fps,
+			"|1%% Low: %.0f" % one_pct_low,
+			"|Frame Time: %.2f ms" % frame_time,
+			"|Tris: %d" % tris,
+			"|Objects: %d" % objects,
+			"|Draw Calls: %d" % calls,
+			"|Mem: %.1f MB" % memory_usage,
+		]).replace_chars("[\",]", 8203).replace("|", "\n")
 		text = contents
-		print(contents)
-
+	
 	else:
-		var contents: String = ""
-		for line: String in [
+		var contents: String = str([
 			"FPS: %.0f" % fps,
-			"\nPeak FPS: %.0f" % peak_fps,
-			"\nAvg FPS: %.1f" % avg_fps,
-			"\n1%% Low: %.0f" % one_pct_low,
-			"\nFrame Time: %.2f ms" % frame_time,
-			"\nMem: %.1f MB" % memory_usage
-		]:
-			print(contents.insert(-1, line))
+			"|Peak FPS: %.0f" % peak_fps,
+			"|Avg FPS: %.1f" % avg_fps,
+			"|1%% Low: %.0f" % one_pct_low,
+			"|Frame Time: %.2f ms" % frame_time,
+			"|Mem: %.1f MB" % memory_usage,
+		]).replace_chars("[\",]", 8203).replace("|", "\n")
 		text = contents
-		print(contents)

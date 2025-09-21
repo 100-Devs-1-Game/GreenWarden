@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dss6uju4xkuov"]
+[gd_scene load_steps=6 format=3 uid="uid://dss6uju4xkuov"]
 
 [ext_resource type="Script" uid="uid://bag80ntp5uyvi" path="res://Modules/Inventory/inventory.gd" id="1_4ktx7"]
+[ext_resource type="Texture2D" uid="uid://colw1j7td6rm8" path="res://assets/TeamMade/UI/UI_inventory.png" id="2_u8jy2"]
 
 [sub_resource type="Theme" id="Theme_j4p0u"]
 default_font_size = 16
@@ -36,6 +37,10 @@ offset_bottom = 184.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="Container1"]
+layout_mode = 2
+texture = ExtResource("2_u8jy2")
+
 [node name="InventoryContainer" type="Panel" parent="Container1"]
 unique_name_in_owner = true
 self_modulate = Color(0, 0, 0, 0.0666667)
@@ -44,21 +49,26 @@ layout_mode = 2
 
 [node name="ExitInvintory" type="Button" parent="Container1/InventoryContainer"]
 top_level = true
-layout_mode = 0
-anchor_left = 0.673611
-anchor_top = 0.195988
-anchor_right = 0.693793
-anchor_bottom = 0.231867
-offset_right = 7.75012
-offset_bottom = 7.74989
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = -196.5
+offset_right = 231.0
+offset_bottom = -165.5
+grow_horizontal = 2
+grow_vertical = 2
 rotation = 6.28319
 scale = Vector2(0.75, 0.75)
 theme = SubResource("Theme_j4p0u")
 action_mode = 0
 text = "X"
-metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Container1/InventoryContainer"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.913725)
 custom_minimum_size = Vector2(412, 360)
 layout_mode = 0
@@ -1113,7 +1123,7 @@ size_flags_vertical = 3
 [node name="Slot1" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_right = 60.0
 offset_bottom = 60.0
 size_flags_horizontal = 3
@@ -1156,7 +1166,7 @@ vertical_alignment = 2
 [node name="Slot2" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 66.0
 offset_right = 126.0
 offset_bottom = 60.0
@@ -1200,7 +1210,7 @@ vertical_alignment = 2
 [node name="Slot3" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 132.0
 offset_right = 192.0
 offset_bottom = 60.0
@@ -1244,7 +1254,7 @@ vertical_alignment = 2
 [node name="Slot4" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 198.0
 offset_right = 258.0
 offset_bottom = 60.0
@@ -1288,7 +1298,7 @@ vertical_alignment = 2
 [node name="Slot5" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 264.0
 offset_right = 324.0
 offset_bottom = 60.0
@@ -1332,7 +1342,7 @@ vertical_alignment = 2
 [node name="Slot6" type="Panel" parent="Container2/HotbarContainer/Slots"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 2
+layout_mode = 0
 offset_left = 330.0
 offset_right = 390.0
 offset_bottom = 60.0
@@ -1374,7 +1384,7 @@ label_settings = SubResource("LabelSettings_2ciat")
 vertical_alignment = 2
 
 [node name="Gap" type="Panel" parent="Container2/HotbarContainer/Slots"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 384.0
 offset_right = 384.0
 offset_bottom = 60.0
