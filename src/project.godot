@@ -15,6 +15,10 @@ run/main_scene="uid://80vsro5jpxqb"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://cmfoocp1i8x7q"
 
+[autoload]
+
+DemoGlobal="*res://demo/global/demo_global.gd"
+
 [debug]
 
 gdscript/warnings/enable=false

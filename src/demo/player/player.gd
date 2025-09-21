@@ -14,6 +14,8 @@ extends CharacterBody3D
 
 
 func _ready() -> void:
+	DemoGlobal.player= self
+	
 	Input.mouse_mode= Input.MOUSE_MODE_CAPTURED
 
 
