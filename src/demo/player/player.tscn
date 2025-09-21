@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvcnux054nn6a"]
+
+[ext_resource type="Script" uid="uid://d4gghji7lmvrs" path="res://demo/player/player.gd" id="1_euw2q"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euw2q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_euw2q"]
+font_size = 30
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_euw2q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_euw2q")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -5)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label Feedback" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_euw2q")

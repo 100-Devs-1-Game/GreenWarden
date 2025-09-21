@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://ixbw87p1daaj"]
+
+[ext_resource type="Script" uid="uid://bpaptagrtj56s" path="res://demo/planting/plant_object.gd" id="1_t7xva"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r64mh"]
+albedo_color = Color(1, 0.87058824, 0.15686275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_kmse1"]
+material = SubResource("StandardMaterial3D_r64mh")
+size = Vector3(0.1, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3prw"]
+albedo_color = Color(1, 0.87058824, 0.15686275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7xva"]
+material = SubResource("StandardMaterial3D_w3prw")
+size = Vector3(0.1, 0.6, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xha4e"]
+albedo_color = Color(1, 0.87058824, 0.15686275, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1hkmi"]
+material = SubResource("StandardMaterial3D_xha4e")
+size = Vector3(0.1, 1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cvkwt"]
+albedo_color = Color(0.16995102, 0.066302024, 0.0051051504, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fv8tg"]
+material = SubResource("StandardMaterial3D_cvkwt")
+size = Vector3(0.2, 0.4, 0.2)
+
+[node name="Wheat Plant" type="Node3D"]
+script = ExtResource("1_t7xva")
+
+[node name="Stage 1" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stage 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("BoxMesh_kmse1")
+
+[node name="Stage 2" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stage 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_t7xva")
+
+[node name="Stage 3" type="Node3D" parent="."]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stage 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_1hkmi")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Stage 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+mesh = SubResource("BoxMesh_fv8tg")

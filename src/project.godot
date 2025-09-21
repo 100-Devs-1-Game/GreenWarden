@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="GreenWarden (4.5)"
-run/main_scene="uid://syv1m1ywqsyv"
+run/main_scene="uid://80vsro5jpxqb"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://cmfoocp1i8x7q"
 
 [debug]
 
+gdscript/warnings/enable=false
 gdscript/warnings/untyped_declaration=1
 gdscript/warnings/inferred_declaration=1
 gdscript/warnings/unsafe_property_access=1

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SeedItem" load_steps=3 format=3 uid="uid://c2revt2cprle0"]
+
+[ext_resource type="Resource" uid="uid://d2ma7gw7vcxgl" path="res://demo/data/wheat_plant.tres" id="1_6cjvp"]
+[ext_resource type="Script" uid="uid://b6tbapwhgo6f" path="res://demo/planting/seed_item.gd" id="1_oorat"]
+
+[resource]
+script = ExtResource("1_oorat")
+plant = ExtResource("1_6cjvp")
+metadata/_custom_type_script = "uid://b6tbapwhgo6f"
