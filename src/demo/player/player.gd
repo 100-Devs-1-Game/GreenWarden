@@ -34,13 +34,8 @@ func _input(event: InputEvent) -> void:
 							pickup_item(crop_plot.harvest())
 					else:
 						crop_plot.plant_seed(seed_item)
-
-	elif event is InputEventKey:
-		if event.pressed:
-			match event.keycode:
-				KEY_C:
-					if ray_cast.is_colliding():
-						level.create_crop_plot(ray_cast.get_collision_point())
+				else:
+					level.create_crop_plot(ray_cast.get_collision_point())
 
 
 func pickup_item(item: Item):
