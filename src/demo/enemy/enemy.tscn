@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://jbmqf027fu4u"]
+
+[ext_resource type="Script" uid="uid://bldb2ici47gwi" path="res://demo/enemy/enemy.gd" id="1_128wq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_128wq"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_07jph"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_128wq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6n563"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mhmeh"]
+radius = 0.19
+height = 0.325
+
+[node name="Enemy" type="RigidBody3D"]
+collision_layer = 8
+collision_mask = 9
+physics_material_override = SubResource("PhysicsMaterial_128wq")
+lock_rotation = true
+linear_damp = 1.0
+script = ExtResource("1_128wq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_07jph")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_128wq")
+
+[node name="Model" type="Node3D" parent="."]
+
+[node name="Head" type="MeshInstance3D" parent="Model"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
+mesh = SubResource("SphereMesh_6n563")
+skeleton = NodePath("../..")
+
+[node name="Nose" type="MeshInstance3D" parent="Model/Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = SubResource("SphereMesh_mhmeh")
+
+[node name="Timer Pathfinder Update" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer Pathfinder Update" to="." method="_on_timer_pathfinder_update_timeout"]
