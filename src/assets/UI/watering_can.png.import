@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://devqscvox6l7h"
-path="res://.godot/imported/wheat.png-b8377d07d0ae7cc124d12ccd5e469381.ctex"
+uid="uid://txee2to6bd1i"
+path="res://.godot/imported/watering_can.png-ac9a95acded7e420c11db2817197209d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Modules/Inventory/wheat.png"
-dest_files=["res://.godot/imported/wheat.png-b8377d07d0ae7cc124d12ccd5e469381.ctex"]
+source_file="res://assets/UI/watering_can.png"
+dest_files=["res://.godot/imported/watering_can.png-ac9a95acded7e420c11db2817197209d.ctex"]
 
 [params]
 
