@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody3D
 
 @export var level: DemoLevel
+@export var move_speed: float= 5.0
 @export var mouse_sensitivity: float= 0.2
 @export var seed_item: SeedItem
 
@@ -18,6 +19,13 @@ func _ready() -> void:
 	
 	Input.mouse_mode= Input.MOUSE_MODE_CAPTURED
 
+
+func _physics_process(delta: float) -> void:
+	var move_dir: = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var forward: Vector3 = camera.global_transform.basis * Vector3(move_dir.x, 0, move_dir.y)
+	var walk_dir: Vector3 = Vector3(forward.x, 0, forward.z).normalized()
+	velocity= walk_dir * move_speed
+	move_and_slide()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
