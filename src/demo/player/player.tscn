@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvcnux054nn6a"]
+[gd_scene load_steps=7 format=3 uid="uid://bvcnux054nn6a"]
 
 [ext_resource type="Script" uid="uid://d4gghji7lmvrs" path="res://demo/player/player.gd" id="1_euw2q"]
 [ext_resource type="PackedScene" uid="uid://c0ign73vq2053" path="res://demo/ui/hotbar.tscn" id="2_2t47n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euw2q"]
+
+[sub_resource type="Environment" id="Environment_2t47n"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2t47n"]
 radius = 1.5
@@ -26,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+cull_mask = 1048573
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
@@ -33,6 +38,28 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
 collision_mask = 3
 collide_with_areas = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CameraPivot/Camera3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CameraPivot/Camera3D/SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Camera Item Container" type="Camera3D" parent="CameraPivot/Camera3D/SubViewportContainer/SubViewport"]
+cull_mask = 2
+environment = SubResource("Environment_2t47n")
+fov = 40.0
+
+[node name="Item Holder" type="Node3D" parent="CameraPivot/Camera3D/SubViewportContainer/SubViewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.7, -2.5)
 
 [node name="Pickup Area" type="Area3D" parent="."]
 collision_mask = 128

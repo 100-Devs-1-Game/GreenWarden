@@ -13,6 +13,7 @@ extends CharacterBody3D
 @onready var hotbar: Hotbar = %Hotbar
 
 @onready var label_feedback: Label = %"Label Feedback"
+@onready var item_holder: Node3D = %"Item Holder"
 
 
 
