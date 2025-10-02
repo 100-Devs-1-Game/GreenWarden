@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/demo_level.gd" id="1_l0y0h"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_nod2y"]
 [ext_resource type="PackedScene" uid="uid://bvcnux054nn6a" path="res://demo/player/player.tscn" id="3_ibs8o"]
+[ext_resource type="PackedScene" uid="uid://h6kd1vo71x05" path="res://demo/item/item_instance.tscn" id="3_kdojh"]
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="4_kdojh"]
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="5_nod2y"]
-[ext_resource type="PackedScene" uid="uid://jbmqf027fu4u" path="res://demo/enemy/enemy.tscn" id="6_ibs8o"]
 
 [sub_resource type="Gradient" id="Gradient_5k3wr"]
 colors = PackedColorArray(0, 0.34901962, 0, 1, 0.4713393, 0.57193667, 0.35398865, 1)
@@ -23,6 +23,7 @@ albedo_texture = SubResource("NoiseTexture2D_d5i08")
 [node name="Demo Level" type="Node3D"]
 script = ExtResource("1_l0y0h")
 crop_plot_scene = ExtResource("2_nod2y")
+item_instance_scene = ExtResource("3_kdojh")
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
@@ -42,6 +43,3 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1
 script = ExtResource("5_nod2y")
 area = Rect2i(-40, -40, 80, 80)
 metadata/_custom_type_script = "uid://ktaugiyoqyqq"
-
-[node name="Enemy" parent="." instance=ExtResource("6_ibs8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, -20.300001)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://h6kd1vo71x05"]
+
+[ext_resource type="Texture2D" uid="uid://devqscvox6l7h" path="res://Modules/Inventory/wheat.png" id="1_layt4"]
+[ext_resource type="Script" uid="uid://c81n8pl5qn1fl" path="res://demo/item/item_instance.gd" id="1_o2dpu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o2dpu"]
+
+[node name="Item Instance" type="Area3D"]
+collision_layer = 128
+script = ExtResource("1_o2dpu")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, -0.5, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("1_layt4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_o2dpu")

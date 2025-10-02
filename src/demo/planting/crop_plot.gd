@@ -12,11 +12,13 @@ func plant_seed(seed: SeedItem):
 	add_child(plant)
 
 
-func harvest()-> Item:
+func harvest()-> InventoryItem:
 	var item: Item= plant.type.harvest_item
+	var amount:= randi_range(plant.type.harvest_min, plant.type.harvest_max)
+	var inv_item:= InventoryItem.new(item, amount)
 	plant.queue_free()
 	plant= null
-	return item
+	return inv_item
 
 
 func can_harvest()-> bool:

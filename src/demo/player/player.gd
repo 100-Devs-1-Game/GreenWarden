@@ -10,6 +10,7 @@ extends CharacterBody3D
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var camera: Camera3D = $CameraPivot/Camera3D
 @onready var ray_cast: RayCast3D = %RayCast3D
+@onready var hotbar: Hotbar = %Hotbar
 
 @onready var label_feedback: Label = %"Label Feedback"
 
@@ -43,12 +44,30 @@ func _input(event: InputEvent) -> void:
 					var crop_plot: CropPlot= target_obj
 					if crop_plot.plant != null:
 						if crop_plot.can_harvest():
-							level.spawn_item(crop_plot.harvest())
+							level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
 					else:
 						crop_plot.plant_seed(seed_item)
 				else:
 					level.create_crop_plot(ray_cast.get_collision_point())
 
 
-func pickup_item(item: Item):
-	label_feedback.text= "Picked up " + item.display_name
+func pick_up_item(item_inst: ItemInstance):
+	var inv_item:= item_inst.pick_up()
+	hotbar.add_item(inv_item)
+	show_feedback("Picked up " + inv_item.item_type.display_name)
+	
+
+func show_feedback(text: String):
+	label_feedback.text= text
+
+
+func _on_pickup_area_area_entered(area: Area3D) -> void:
+	var item_inst: ItemInstance= area
+	assert(item_inst)
+	if can_pick_up(item_inst):
+		pick_up_item(item_inst)
+
+
+func can_pick_up(item_inst: ItemInstance)-> bool:
+	#TODO check for empty/matching slot in Hotbar Inventory
+	return true
