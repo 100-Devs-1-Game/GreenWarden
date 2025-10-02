@@ -43,7 +43,7 @@ func _input(event: InputEvent) -> void:
 					var crop_plot: CropPlot= target_obj
 					if crop_plot.plant != null:
 						if crop_plot.can_harvest():
-							pickup_item(crop_plot.harvest())
+							level.spawn_item(crop_plot.harvest())
 					else:
 						crop_plot.plant_seed(seed_item)
 				else:
