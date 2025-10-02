@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://80vsro5jpxqb"]
+[gd_scene load_steps=17 format=3 uid="uid://80vsro5jpxqb"]
 
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/demo_level.gd" id="1_l0y0h"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_nod2y"]
@@ -7,30 +7,68 @@
 [ext_resource type="Texture2D" uid="uid://g82x7gl0ajn" path="res://assets/TeamMade/placeholders/grass.png" id="4_connt"]
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="4_kdojh"]
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="5_nod2y"]
+[ext_resource type="Script" uid="uid://m46458x0gnw0" path="res://demo/level/terrain_generator.gd" id="7_t56v7"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o2jl"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kdojh"]
+
+[sub_resource type="Sky" id="Sky_connt"]
+sky_material = SubResource("ProceduralSkyMaterial_kdojh")
+
+[sub_resource type="Environment" id="Environment_2o2jl"]
+background_mode = 2
+sky = SubResource("Sky_connt")
+ambient_light_source = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_connt"]
 albedo_texture = ExtResource("4_connt")
 uv1_scale = Vector3(50, 50, 1)
 texture_filter = 0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2o2jl"]
+frequency = 0.0274
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0tjr"]
+albedo_texture = ExtResource("4_connt")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_j4gj6"]
+material = SubResource("StandardMaterial3D_y0tjr")
+
+[sub_resource type="MultiMesh" id="MultiMesh_6t71u"]
+transform_format = 1
+mesh = SubResource("BoxMesh_j4gj6")
 
 [node name="Demo Level" type="Node3D"]
 script = ExtResource("1_l0y0h")
 crop_plot_scene = ExtResource("2_nod2y")
 item_instance_scene = ExtResource("3_kdojh")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_2o2jl")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 use_collision = true
 size = Vector3(50, 0.1, 50)
-material = SubResource("StandardMaterial3D_2o2jl")
+material = SubResource("StandardMaterial3D_connt")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ibs8o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
 level = NodePath("..")
 seed_item = ExtResource("4_kdojh")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+[node name="Terrain Generator" type="Node" parent="."]
+script = ExtResource("7_t56v7")
+noise = SubResource("FastNoiseLite_2o2jl")
+min_radius = 25
+max_radius = 35
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Terrain Generator"]
+multimesh = SubResource("MultiMesh_6t71u")
 
 [node name="Pathfinder" type="Node" parent="."]
 script = ExtResource("5_nod2y")
