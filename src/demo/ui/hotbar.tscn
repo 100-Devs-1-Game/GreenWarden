@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0ign73vq2053"]
+
+[ext_resource type="Script" uid="uid://bk0pntt2v746y" path="res://demo/ui/hotbar.gd" id="1_317d2"]
+[ext_resource type="PackedScene" uid="uid://b0weqwb2ehti6" path="res://demo/ui/hotbar_slot.tscn" id="1_mn8dc"]
+
+[node name="Hotbar" type="PanelContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -82.0
+offset_right = 41.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_317d2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Slots" type="HBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Hotbar Slot" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot2" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot3" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot4" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot5" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot6" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot7" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot8" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2
+
+[node name="Hotbar Slot9" parent="MarginContainer/Slots" instance=ExtResource("1_mn8dc")]
+layout_mode = 2

@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0weqwb2ehti6"]
+
+[ext_resource type="Script" uid="uid://cgh4ebc6apinv" path="res://demo/ui/hotbar_slot.gd" id="1_je1ei"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4fvmk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_je1ei"]
+font_size = 28
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Hotbar Slot" type="PanelContainer"]
+script = ExtResource("1_je1ei")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4fvmk")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Label Amount" type="Label" parent="MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "1"
+label_settings = SubResource("LabelSettings_je1ei")
+horizontal_alignment = 2
+vertical_alignment = 2
