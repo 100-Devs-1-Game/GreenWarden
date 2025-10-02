@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="SeedItem" load_steps=3 format=3 uid="uid://c2revt2cprle0"]
+[gd_resource type="Resource" script_class="SeedItem" load_steps=4 format=3 uid="uid://c2revt2cprle0"]
 
 [ext_resource type="Resource" uid="uid://d2ma7gw7vcxgl" path="res://demo/data/wheat_plant.tres" id="1_6cjvp"]
+[ext_resource type="Texture2D" uid="uid://cag4nxm7cml17" path="res://assets/TeamMade/placeholders/wheat_seeds.png" id="1_g0isi"]
 [ext_resource type="Script" uid="uid://b6tbapwhgo6f" path="res://demo/planting/seed_item.gd" id="1_oorat"]
 
 [resource]
 script = ExtResource("1_oorat")
 plant = ExtResource("1_6cjvp")
+display_name = "Wheat Seeds"
+inventory_icon = ExtResource("1_g0isi")
 metadata/_custom_type_script = "uid://b6tbapwhgo6f"
