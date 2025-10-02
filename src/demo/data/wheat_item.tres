@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://dudrw8v46dee3"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dudrw8v46dee3"]
 
-[ext_resource type="Script" uid="uid://dkpfu0duh1u0b" path="res://demo/item.gd" id="1_0yoxm"]
+[ext_resource type="Script" uid="uid://dkpfu0duh1u0b" path="res://demo/item/item.gd" id="1_0yoxm"]
+[ext_resource type="Texture2D" uid="uid://devqscvox6l7h" path="res://Modules/Inventory/wheat.png" id="1_77acp"]
 
 [resource]
 script = ExtResource("1_0yoxm")
 display_name = "Wheat"
+inventory_icon = ExtResource("1_77acp")
 metadata/_custom_type_script = "uid://dkpfu0duh1u0b"
