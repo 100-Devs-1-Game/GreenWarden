@@ -1,14 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7e2pg8krsqjs"]
+[gd_scene load_steps=6 format=3 uid="uid://c7e2pg8krsqjs"]
 
 [ext_resource type="Script" uid="uid://058e6ya7hth2" path="res://demo/planting/crop_plot.gd" id="1_km8jr"]
+[ext_resource type="Texture2D" uid="uid://chw3wk30hokp4" path="res://assets/TeamMade/placeholders/dirt.png" id="2_4ilr8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ca3o4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km8jr"]
-albedo_color = Color(0.30726802, 0.19037491, 0.051969804, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22sdv"]
+albedo_texture = ExtResource("2_4ilr8")
+uv1_triplanar = true
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_khjc7"]
-material = SubResource("StandardMaterial3D_km8jr")
+material = SubResource("StandardMaterial3D_22sdv")
 size = Vector3(1, 0.05, 1)
 
 [node name="Crop Plot" type="Area3D"]

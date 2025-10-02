@@ -1,24 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://80vsro5jpxqb"]
+[gd_scene load_steps=9 format=3 uid="uid://80vsro5jpxqb"]
 
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/demo_level.gd" id="1_l0y0h"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_nod2y"]
 [ext_resource type="PackedScene" uid="uid://bvcnux054nn6a" path="res://demo/player/player.tscn" id="3_ibs8o"]
 [ext_resource type="PackedScene" uid="uid://h6kd1vo71x05" path="res://demo/item/item_instance.tscn" id="3_kdojh"]
+[ext_resource type="Texture2D" uid="uid://g82x7gl0ajn" path="res://assets/TeamMade/placeholders/grass.png" id="4_connt"]
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="4_kdojh"]
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="5_nod2y"]
 
-[sub_resource type="Gradient" id="Gradient_5k3wr"]
-colors = PackedColorArray(0, 0.34901962, 0, 1, 0.4713393, 0.57193667, 0.35398865, 1)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_inqgn"]
-frequency = 0.0278
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d5i08"]
-noise = SubResource("FastNoiseLite_inqgn")
-color_ramp = SubResource("Gradient_5k3wr")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wxyx"]
-albedo_texture = SubResource("NoiseTexture2D_d5i08")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2o2jl"]
+albedo_texture = ExtResource("4_connt")
+uv1_scale = Vector3(50, 50, 1)
+texture_filter = 0
 
 [node name="Demo Level" type="Node3D"]
 script = ExtResource("1_l0y0h")
@@ -29,7 +22,7 @@ item_instance_scene = ExtResource("3_kdojh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 use_collision = true
 size = Vector3(50, 0.1, 50)
-material = SubResource("StandardMaterial3D_4wxyx")
+material = SubResource("StandardMaterial3D_2o2jl")
 
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("3_ibs8o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
