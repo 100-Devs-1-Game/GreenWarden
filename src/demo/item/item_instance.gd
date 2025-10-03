@@ -1,6 +1,14 @@
 class_name ItemInstance
 extends Area3D
 
+@export var inv_item: InventoryItem:
+	set(i):
+		inv_item= i
+		assert(inv_item)
+		if not is_inside_tree():
+			await ready
+		sprite.texture= inv_item.item_type.inventory_icon
+
 @export var item_gravity: float= 10.0
 @export var item_damping: float= 0.1
 @export var bounce_height: float= 0.2
@@ -11,11 +19,6 @@ extends Area3D
 @onready var sprite: Sprite3D = $Sprite3D
 
 var velocity: Vector3
-var inv_item: InventoryItem:
-	set(i):
-		inv_item= i
-		assert(inv_item)
-		sprite.texture= inv_item.item_type.inventory_icon
 
 
 

@@ -14,6 +14,9 @@ extends CharacterBody3D
 
 @onready var label_feedback: Label = %"Label Feedback"
 @onready var item_holder: Node3D = %"Item Holder"
+@onready var animation_player_hand: AnimationPlayer = %"AnimationPlayer Hand"
+
+var equipped_hand_object: HandObject
 
 
 
@@ -31,25 +34,34 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent):
 	if event is InputEventMouseMotion:
 		camera.rotate_x(deg_to_rad(-event.relative.y) * mouse_sensitivity)
 		camera_pivot.rotate_y(deg_to_rad(-event.relative.x) * mouse_sensitivity)
-	
-	elif event is InputEventMouseButton:
-		if event.pressed:
-			if ray_cast.is_colliding():
-				var target_obj: Node3D= ray_cast.get_collider()
-				
-				if target_obj is CropPlot:
-					var crop_plot: CropPlot= target_obj
-					if crop_plot.plant != null:
-						if crop_plot.can_harvest():
-							level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
-					else:
-						crop_plot.plant_seed(seed_item)
-				else:
-					level.create_crop_plot(ray_cast.get_collision_point())
+	else:
+		if not event.pressed:
+			return
+		
+		if equipped_hand_object:
+			if event.is_action("primary_action"):
+				equipped_hand_object.use(true, self)
+			elif event.is_action("secondary_action"):
+				equipped_hand_object.use(false, self)
+
+	#elif event is InputEventMouseButton:
+		#if event.pressed:
+			#if ray_cast.is_colliding():
+				#var target_obj: Node3D= ray_cast.get_collider()
+				#
+				#if target_obj is CropPlot:
+					#var crop_plot: CropPlot= target_obj
+					#if crop_plot.plant != null:
+						#if crop_plot.can_harvest():
+							#level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
+					#else:
+						#crop_plot.plant_seed(seed_item)
+				#else:
+					#level.create_crop_plot(ray_cast.get_collision_point())
 
 
 func pick_up_item(item_inst: ItemInstance):
@@ -62,6 +74,15 @@ func show_feedback(text: String):
 	label_feedback.text= text
 
 
+func equip_item(item: HandItem):
+	if equipped_hand_object:
+		equipped_hand_object.queue_free()
+	assert(item.scene)
+	equipped_hand_object= item.scene.instantiate()
+	equipped_hand_object.type= item
+	item_holder.add_child(equipped_hand_object)
+
+
 func _on_pickup_area_area_entered(area: Area3D) -> void:
 	var item_inst: ItemInstance= area
 	assert(item_inst)
@@ -72,3 +93,8 @@ func _on_pickup_area_area_entered(area: Area3D) -> void:
 func can_pick_up(item_inst: ItemInstance)-> bool:
 	#TODO check for empty/matching slot in Hotbar Inventory
 	return true
+
+
+func _on_hotbar_equip_item(item: Item) -> void:
+	if item is HandItem:
+		equip_item(item)

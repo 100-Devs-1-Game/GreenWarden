@@ -31,6 +31,8 @@ func add_item(inv_item: InventoryItem):
 	if not slot:
 		slot= find_free_slot()
 	slot.add_item(inv_item)
+	if slot == get_selected_slot():
+		equip_item.emit(inv_item.item_type)
 
 
 func use_item():
@@ -58,6 +60,10 @@ func select_slot(idx: int):
 	for slot in slots:
 		slot.deselect()
 	slots[idx].select()
+	
+	var inv_item:= get_selected_inventory_item()
+	if inv_item:
+		equip_item.emit(inv_item.item)
 
 
 func find_slot_with_type(item_type: Item)-> HotbarSlot:

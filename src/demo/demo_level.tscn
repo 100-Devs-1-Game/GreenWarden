@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://80vsro5jpxqb"]
+[gd_scene load_steps=20 format=3 uid="uid://80vsro5jpxqb"]
 
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/demo_level.gd" id="1_l0y0h"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_nod2y"]
@@ -8,6 +8,8 @@
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="4_kdojh"]
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="5_nod2y"]
 [ext_resource type="Script" uid="uid://m46458x0gnw0" path="res://demo/level/terrain_generator.gd" id="7_t56v7"]
+[ext_resource type="Resource" uid="uid://cpbmk2nju6sjt" path="res://demo/data/hoe_tool.tres" id="9_t56v7"]
+[ext_resource type="Script" uid="uid://dti18hwkiqse" path="res://demo/item/inventory_item.gd" id="10_y0tjr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kdojh"]
 
@@ -38,6 +40,11 @@ material = SubResource("StandardMaterial3D_y0tjr")
 [sub_resource type="MultiMesh" id="MultiMesh_6t71u"]
 transform_format = 1
 mesh = SubResource("BoxMesh_j4gj6")
+
+[sub_resource type="Resource" id="Resource_j4gj6"]
+script = ExtResource("10_y0tjr")
+item_type = ExtResource("9_t56v7")
+metadata/_custom_type_script = "uid://dti18hwkiqse"
 
 [node name="Demo Level" type="Node3D"]
 script = ExtResource("1_l0y0h")
@@ -74,3 +81,7 @@ multimesh = SubResource("MultiMesh_6t71u")
 script = ExtResource("5_nod2y")
 area = Rect2i(-40, -40, 80, 80)
 metadata/_custom_type_script = "uid://ktaugiyoqyqq"
+
+[node name="Item Instance" parent="." instance=ExtResource("3_kdojh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -4.8)
+inv_item = SubResource("Resource_j4gj6")
