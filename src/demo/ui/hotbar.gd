@@ -32,7 +32,7 @@ func add_item(inv_item: InventoryItem):
 		slot= find_free_slot()
 	slot.add_item(inv_item)
 	if slot == get_selected_slot():
-		equip_item.emit(inv_item.item_type)
+		equip_item.emit(inv_item)
 
 
 func use_item():

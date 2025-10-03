@@ -74,12 +74,13 @@ func show_feedback(text: String):
 	label_feedback.text= text
 
 
-func equip_item(item: HandItem):
+func equip_item(inv_item: InventoryItem):
 	if equipped_hand_object:
 		equipped_hand_object.queue_free()
-	assert(item.scene)
-	equipped_hand_object= item.scene.instantiate()
-	equipped_hand_object.type= item
+	var item_type: Item= inv_item.item_type
+	assert(item_type.scene)
+	equipped_hand_object= item_type.scene.instantiate()
+	equipped_hand_object.inv_item= inv_item
 	item_holder.add_child(equipped_hand_object)
 
 
@@ -95,6 +96,6 @@ func can_pick_up(item_inst: ItemInstance)-> bool:
 	return true
 
 
-func _on_hotbar_equip_item(item: Item) -> void:
-	if item is HandItem:
-		equip_item(item)
+func _on_hotbar_equip_item(inv_item: InventoryItem) -> void:
+	if inv_item.item_type is HandItem:
+		equip_item(inv_item)
