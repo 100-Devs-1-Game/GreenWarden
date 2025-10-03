@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="HandItem" load_steps=4 format=3 uid="uid://cpbmk2nju6sjt"]
+
+[ext_resource type="PackedScene" uid="uid://crlva2441rdoe" path="res://demo/tool_scenes/hoe.tscn" id="1_b4ap3"]
+[ext_resource type="Script" uid="uid://ccdk3776e61rx" path="res://demo/item/hand_item.gd" id="1_id4un"]
+[ext_resource type="Texture2D" uid="uid://c4o06end6xa3o" path="res://assets/TeamMade/UI/hoe.png" id="1_vmqrl"]
+
+[resource]
+script = ExtResource("1_id4un")
+scene = ExtResource("1_b4ap3")
+primary_action_anim = "swing_down"
+display_name = "Hoe"
+inventory_icon = ExtResource("1_vmqrl")
+metadata/_custom_type_script = "uid://ccdk3776e61rx"

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://crlva2441rdoe"]
+
+[ext_resource type="Script" uid="uid://b3hoautl6jdr2" path="res://demo/player/hand_object.gd" id="1_lt3pj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t47n"]
+albedo_color = Color(0.85490197, 0.39607844, 0.08235294, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_exbir"]
+material = SubResource("StandardMaterial3D_2t47n")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj6q8"]
+albedo_color = Color(0.34158427, 0.34158427, 0.3415842, 1)
+metallic = 0.8
+roughness = 0.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_efkpv"]
+material = SubResource("StandardMaterial3D_tj6q8")
+size = Vector3(0.05, 0.02, 0.4)
+
+[node name="Hoe" type="Node3D"]
+script = ExtResource("1_lt3pj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+layers = 2
+mesh = SubResource("CylinderMesh_exbir")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.20000002)
+layers = 2
+mesh = SubResource("BoxMesh_efkpv")
