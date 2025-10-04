@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://crlva2441rdoe"]
+[gd_scene load_steps=7 format=3 uid="uid://crlva2441rdoe"]
 
-[ext_resource type="Script" uid="uid://b3hoautl6jdr2" path="res://demo/player/hand_object.gd" id="1_lt3pj"]
+[ext_resource type="Script" uid="uid://bbcy584efq3uo" path="res://demo/tool_scenes/hoe_tool_object.gd" id="1_lt3pj"]
+[ext_resource type="Resource" uid="uid://c03lna6xcvv7s" path="res://demo/data/crop_plot_structure.tres" id="2_wu0gp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2t47n"]
 albedo_color = Color(0.85490197, 0.39607844, 0.08235294, 1)
@@ -22,6 +23,7 @@ size = Vector3(0.05, 0.02, 0.4)
 
 [node name="Hoe" type="Node3D"]
 script = ExtResource("1_lt3pj")
+crop_plot_structure = ExtResource("2_wu0gp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
