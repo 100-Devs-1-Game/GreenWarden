@@ -23,4 +23,9 @@ func calculate_path(from: Vector3, to: Vector3)-> PackedVector3Array:
 	for point in path:
 		result.append(Vector3(point.x, 0, point.y))
 	return result
-		
+
+
+func register_structure(structure: Structure):
+	var tile: Vector2i= level.get_tile(structure.position)
+	if structure.type.blocks_path:
+		astar.set_point_solid(tile)
