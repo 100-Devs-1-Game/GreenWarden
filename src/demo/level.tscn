@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://80vsro5jpxqb"]
+[gd_scene load_steps=21 format=3 uid="uid://80vsro5jpxqb"]
 
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/level.gd" id="1_dh8me"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_r2iv6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="8_xp6m6"]
 [ext_resource type="Resource" uid="uid://cpbmk2nju6sjt" path="res://demo/data/hoe_tool.tres" id="9_fynsk"]
 [ext_resource type="Script" uid="uid://dti18hwkiqse" path="res://demo/item/inventory_item.gd" id="10_p65qc"]
+[ext_resource type="PackedScene" uid="uid://dqdhy6nxhvpkp" path="res://demo/enemy/enemy_spawner.tscn" id="11_r2iv6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kdojh"]
 
@@ -85,3 +86,6 @@ metadata/_custom_type_script = "uid://ktaugiyoqyqq"
 [node name="Item Instance" parent="." instance=ExtResource("3_fn1uh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -4.8)
 inv_item = SubResource("Resource_j4gj6")
+
+[node name="Enemy Spawner" parent="." instance=ExtResource("11_r2iv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7, 3.2, 0)
