@@ -21,7 +21,7 @@ func calculate_path(from: Vector3, to: Vector3)-> PackedVector3Array:
 	var path: PackedVector2Array= astar.get_point_path(from_tile, to_tile)
 	var result: PackedVector3Array
 	for point in path:
-		result.append(Vector3(point.x, 0, point.y))
+		result.append(Vector3(point.x + 0.5, 0, point.y + 0.5))
 	return result
 
 

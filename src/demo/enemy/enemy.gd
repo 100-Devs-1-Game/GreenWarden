@@ -19,12 +19,12 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	var target_pos:= path[1]
-	if arrived_at(target_pos):
-		path.remove_at(0)
-		if path.size() < 2:
-			return
-		target_pos= path[1]
-		
+	#if arrived_at(target_pos):
+		#path.remove_at(0)
+		#if path.size() < 2:
+			#return
+		#target_pos= path[0]
+		#prints("New target pos", target_pos)
 		
 	linear_velocity= position.direction_to(target_pos) * move_speed
 
