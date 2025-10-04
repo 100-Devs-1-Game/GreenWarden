@@ -50,28 +50,19 @@ func _unhandled_input(event: InputEvent):
 				equipped_hand_object.use(true, self)
 			elif event.is_action("secondary_action"):
 				equipped_hand_object.use(false, self)
-		
-
-	#elif event is InputEventMouseButton:
-		#if event.pressed:
-			#if ray_cast.is_colliding():
-				#var target_obj: Node3D= ray_cast.get_collider()
-				#
-				#if target_obj is CropPlot:
-					#var crop_plot: CropPlot= target_obj
-					#if crop_plot.plant != null:
-						#if crop_plot.can_harvest():
-							#level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
-					#else:
-						#crop_plot.plant_seed(seed_item)
-				#else:
-					#level.create_crop_plot(ray_cast.get_collision_point())
+		else:
+			if event.is_action("primary_action"):
+				if ray_cast.is_colliding():
+					var target_obj: Node3D= ray_cast.get_collider()
+					if target_obj is CropPlot:
+						interact_with_crop_plot(target_obj)
 
 
 func pick_up_item(item_inst: ItemInstance):
 	var inv_item:= item_inst.pick_up()
 	show_feedback("Picked up " + inv_item.item_type.display_name)
-
+	add_item(item_inst.inv_item)
+	
 
 func add_item(inv_item: InventoryItem):
 	hotbar.add_item(inv_item)
@@ -89,6 +80,33 @@ func equip_item(inv_item: InventoryItem):
 	equipped_hand_object= item_type.scene.instantiate()
 	equipped_hand_object.inv_item= inv_item
 	item_holder.add_child(equipped_hand_object)
+
+
+func unequip_hand_object():
+	if not equipped_hand_object:
+		return
+	equipped_hand_object.queue_free()
+	equipped_hand_object= null
+
+
+func interact_with_crop_plot(crop_plot: CropPlot):
+	var hotbar_inv_item: InventoryItem= hotbar.get_selected_inventory_item()
+	if hotbar_inv_item.item_type is SeedItem:
+		try_to_plant(crop_plot, hotbar_inv_item)
+	elif not hotbar_inv_item:
+		try_to_harvest(crop_plot)
+
+
+func try_to_plant(crop_plot: CropPlot, inv_item: InventoryItem):
+	if crop_plot.is_empty():
+		crop_plot.plant_seed(seed_item)
+		inv_item.amount-= 1
+		hotbar.update_slot()
+
+
+func try_to_harvest(crop_plot: CropPlot):
+	if crop_plot.can_harvest():
+		level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
 
 
 func open_shop():
@@ -116,3 +134,7 @@ func can_pick_up(item_inst: ItemInstance)-> bool:
 func _on_hotbar_equip_item(inv_item: InventoryItem) -> void:
 	if inv_item.item_type is HandItem:
 		equip_item(inv_item)
+
+
+func _on_hotbar_unequip_item() -> void:
+	unequip_hand_object()
