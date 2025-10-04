@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgalvgmpu8qdk"]
+[gd_scene load_steps=5 format=3 uid="uid://cgalvgmpu8qdk"]
+
+[ext_resource type="Script" uid="uid://bjwr75mfcab27" path="res://demo/structures/structure.gd" id="1_bdihd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfwll"]
 
@@ -15,6 +17,7 @@ height = 0.6
 
 [node name="SpikeTrap" type="StaticBody3D"]
 collision_layer = 32
+script = ExtResource("1_bdihd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
