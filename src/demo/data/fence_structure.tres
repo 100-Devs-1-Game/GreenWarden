@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_ep3bg")
-structure_scene = ExtResource("2_tefnv")
+scene = ExtResource("2_tefnv")
 metadata/_custom_type_script = "uid://cjnnt4iqvl11g"

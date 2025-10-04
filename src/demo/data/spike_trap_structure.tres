@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_p5q2w")
-structure_scene = ExtResource("2_bt3c5")
+scene = ExtResource("2_bt3c5")
 blocks_path = false
 metadata/_custom_type_script = "uid://cjnnt4iqvl11g"
