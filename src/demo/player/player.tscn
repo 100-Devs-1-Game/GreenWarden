@@ -99,8 +99,7 @@ current = true
 [node name="RayCast3D" type="RayCast3D" parent="CameraPivot/Camera3D"]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
-collision_mask = 3
-collide_with_areas = true
+collision_mask = 49
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CameraPivot/Camera3D"]
 anchors_preset = 15
@@ -158,4 +157,5 @@ visible = false
 
 [connection signal="area_entered" from="Pickup Area" to="." method="_on_pickup_area_area_entered"]
 [connection signal="equip_item" from="CanvasLayer/Hotbar" to="." method="_on_hotbar_equip_item"]
+[connection signal="unequip_item" from="CanvasLayer/Hotbar" to="." method="_on_hotbar_unequip_item"]
 [connection signal="closed" from="CanvasLayer/Shop" to="." method="on_shop_closed"]
