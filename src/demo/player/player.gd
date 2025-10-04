@@ -4,8 +4,6 @@ extends CharacterBody3D
 @export var level: Level
 @export var move_speed: float= 5.0
 @export var mouse_sensitivity: float= 0.2
-@export var seed_item: SeedItem
-@export var structure: StructureType
 
 @onready var camera_pivot: Node3D = $CameraPivot
 @onready var camera: Camera3D = $CameraPivot/Camera3D
@@ -108,7 +106,7 @@ func interact_with_crop_plot(crop_plot: CropPlot):
 
 func try_to_plant(crop_plot: CropPlot, inv_item: InventoryItem):
 	if crop_plot.is_empty():
-		crop_plot.plant_seed(seed_item)
+		crop_plot.plant_seed(inv_item.item_type)
 		hotbar.change_item_amount(inv_item, -1)
 
 
