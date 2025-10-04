@@ -7,6 +7,10 @@ extends Node3D
 var crop_plots: Dictionary
 
 
+func _ready() -> void:
+	DemoGlobal.level= self
+
+
 func create_crop_plot(pos: Vector3):
 	pos= snap_floor_tile_pos(pos)
 	var tile: Vector2i= get_tile(pos)
