@@ -81,7 +81,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
-collision_mask = 53
+collision_mask = 21
 script = ExtResource("1_euw2q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
