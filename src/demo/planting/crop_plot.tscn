@@ -14,8 +14,8 @@ texture_filter = 0
 material = SubResource("StandardMaterial3D_22sdv")
 size = Vector3(1, 0.05, 1)
 
-[node name="Crop Plot" type="Area3D"]
-collision_layer = 2
+[node name="Crop Plot" type="StaticBody3D"]
+collision_layer = 32
 script = ExtResource("1_km8jr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

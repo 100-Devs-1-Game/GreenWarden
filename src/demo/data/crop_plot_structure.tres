@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StructureType" load_steps=3 format=3 uid="uid://c03lna6xcvv7s"]
+
+[ext_resource type="Script" uid="uid://cjnnt4iqvl11g" path="res://demo/structures/structure_type.gd" id="1_kf7ee"]
+[ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_vkc5c"]
+
+[resource]
+script = ExtResource("1_kf7ee")
+scene = ExtResource("2_vkc5c")
+blocks_path = false
+metadata/_custom_type_script = "uid://cjnnt4iqvl11g"

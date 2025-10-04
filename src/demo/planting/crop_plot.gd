@@ -1,7 +1,8 @@
 class_name CropPlot
-extends Area3D
+extends Structure
 
 var plant: PlantObject
+
 
 
 func plant_seed(seed: SeedItem):
