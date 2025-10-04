@@ -16,6 +16,16 @@ func _ready() -> void:
 	update_selection()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not event.is_pressed():
+		return
+	
+	if event.is_action("next_hotbar_slot"):
+		change_relative(1)
+	elif event.is_action("prev_hotbar_slot"):
+		change_relative(-1)
+
+
 func change_relative(delta: int):
 	selected_index= wrapi(selected_index + delta, 0, slots.size())
 	update_selection()
@@ -63,7 +73,7 @@ func select_slot(idx: int):
 	
 	var inv_item:= get_selected_inventory_item()
 	if inv_item:
-		equip_item.emit(inv_item.item)
+		equip_item.emit(inv_item)
 
 
 func find_slot_with_type(item_type: Item)-> HotbarSlot:
