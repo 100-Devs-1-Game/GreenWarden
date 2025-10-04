@@ -3,10 +3,15 @@ extends RigidBody3D
 
 @export var move_speed: float= 4.0
 
-@onready var head: MeshInstance3D = %Head
+@onready var model: Node3D = $Model
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 var path: PackedVector3Array
 
+
+
+func _ready() -> void:
+	animation_player.play("walk")
 
 
 func _physics_process(delta: float) -> void:
@@ -24,9 +29,9 @@ func _physics_process(delta: float) -> void:
 	linear_velocity= position.direction_to(target_pos) * move_speed
 
 	var look_target:= position + linear_velocity.normalized()
-	look_target.y= head.global_position.y
-	if not head.global_position.is_equal_approx(look_target):
-		head.look_at(look_target)
+	look_target.y= model.global_position.y
+	if not model.global_position.is_equal_approx(look_target):
+		model.look_at(look_target)
 
 
 func arrived_at(target: Vector3)-> bool:
