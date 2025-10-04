@@ -26,3 +26,7 @@ func can_harvest()-> bool:
 	if not plant:
 		return false
 	return plant.grow_stage == plant.type.num_growth_stages - 1
+
+
+func is_empty()-> bool:
+	return not plant
