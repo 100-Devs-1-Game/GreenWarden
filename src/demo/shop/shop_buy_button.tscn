@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://kb5lwqk5esb5"]
+
+[node name="ShopBuyButton" type="Button"]
+theme_override_font_sizes/font_size = 40
+text = "Buy"

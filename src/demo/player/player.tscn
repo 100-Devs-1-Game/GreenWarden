@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvcnux054nn6a"]
+[gd_scene load_steps=11 format=3 uid="uid://bvcnux054nn6a"]
 
 [ext_resource type="Script" uid="uid://d4gghji7lmvrs" path="res://demo/player/player.gd" id="1_euw2q"]
 [ext_resource type="PackedScene" uid="uid://c0ign73vq2053" path="res://demo/ui/hotbar.tscn" id="2_2t47n"]
+[ext_resource type="PackedScene" uid="uid://143onre48a04" path="res://demo/shop/shop.tscn" id="3_exbir"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_euw2q"]
 
@@ -151,5 +152,10 @@ label_settings = SubResource("LabelSettings_euw2q")
 [node name="Hotbar" parent="CanvasLayer" instance=ExtResource("2_2t47n")]
 unique_name_in_owner = true
 
+[node name="Shop" parent="CanvasLayer" instance=ExtResource("3_exbir")]
+unique_name_in_owner = true
+visible = false
+
 [connection signal="area_entered" from="Pickup Area" to="." method="_on_pickup_area_area_entered"]
 [connection signal="equip_item" from="CanvasLayer/Hotbar" to="." method="_on_hotbar_equip_item"]
+[connection signal="closed" from="CanvasLayer/Shop" to="." method="on_shop_closed"]

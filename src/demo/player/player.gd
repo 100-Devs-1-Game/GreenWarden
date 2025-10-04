@@ -15,6 +15,7 @@ extends CharacterBody3D
 @onready var label_feedback: Label = %"Label Feedback"
 @onready var item_holder: Node3D = %"Item Holder"
 @onready var animation_player_hand: AnimationPlayer = %"AnimationPlayer Hand"
+@onready var shop: Shop = %Shop
 
 var equipped_hand_object: HandObject
 
@@ -42,11 +43,14 @@ func _unhandled_input(event: InputEvent):
 		if not event.pressed:
 			return
 		
-		if equipped_hand_object:
+		if event.is_action("open_shop"):
+			open_shop()
+		elif equipped_hand_object:
 			if event.is_action("primary_action"):
 				equipped_hand_object.use(true, self)
 			elif event.is_action("secondary_action"):
 				equipped_hand_object.use(false, self)
+		
 
 	#elif event is InputEventMouseButton:
 		#if event.pressed:
@@ -66,9 +70,12 @@ func _unhandled_input(event: InputEvent):
 
 func pick_up_item(item_inst: ItemInstance):
 	var inv_item:= item_inst.pick_up()
-	hotbar.add_item(inv_item)
 	show_feedback("Picked up " + inv_item.item_type.display_name)
-	
+
+
+func add_item(inv_item: InventoryItem):
+	hotbar.add_item(inv_item)
+
 
 func show_feedback(text: String):
 	label_feedback.text= text
@@ -82,6 +89,16 @@ func equip_item(inv_item: InventoryItem):
 	equipped_hand_object= item_type.scene.instantiate()
 	equipped_hand_object.inv_item= inv_item
 	item_holder.add_child(equipped_hand_object)
+
+
+func open_shop():
+	shop.show()
+	Input.mouse_mode= Input.MOUSE_MODE_VISIBLE
+
+
+func on_shop_closed():
+	shop.hide()
+	Input.mouse_mode= Input.MOUSE_MODE_CAPTURED
 
 
 func _on_pickup_area_area_entered(area: Area3D) -> void:
