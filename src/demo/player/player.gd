@@ -91,6 +91,9 @@ func unequip_hand_object():
 
 func interact_with_crop_plot(crop_plot: CropPlot):
 	var hotbar_inv_item: InventoryItem= hotbar.get_selected_inventory_item()
+	if not hotbar_inv_item:
+		return
+		
 	if hotbar_inv_item.item_type is SeedItem:
 		try_to_plant(crop_plot, hotbar_inv_item)
 	elif not hotbar_inv_item:
@@ -100,8 +103,7 @@ func interact_with_crop_plot(crop_plot: CropPlot):
 func try_to_plant(crop_plot: CropPlot, inv_item: InventoryItem):
 	if crop_plot.is_empty():
 		crop_plot.plant_seed(seed_item)
-		inv_item.amount-= 1
-		hotbar.update_slot()
+		hotbar.change_item_amount(inv_item, -1)
 
 
 func try_to_harvest(crop_plot: CropPlot):

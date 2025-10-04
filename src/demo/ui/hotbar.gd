@@ -46,15 +46,6 @@ func add_item(inv_item: InventoryItem):
 		equip_item.emit(inv_item)
 
 
-func use_item():
-	var inv_item:= get_selected_inventory_item()
-	assert(inv_item)
-	inv_item.amount-= 1
-	if inv_item.amount <= 0:
-		remove_item()
-	update_slot()
-
-
 func update_selection():
 	select_slot(selected_index)
 
@@ -90,6 +81,16 @@ func find_free_slot()-> HotbarSlot:
 		if not slot.inv_item:
 			return slot
 	return null
+
+
+func change_item_amount(inv_item: InventoryItem, delta: int):
+	inv_item.amount+= delta
+	for slot in slots:
+		if slot.inv_item == inv_item:
+			if inv_item.amount == 0:
+				slot.inv_item= null
+			slot.update()
+			return
 
 
 func get_selected_slot()-> HotbarSlot:
