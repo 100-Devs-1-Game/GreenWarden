@@ -4,37 +4,34 @@ extends CanvasLayer
 signal closed
 
 
-@export var seeds: Array[SeedItem]
-@export var tools: Array[Item]
+@export var items: Array[Item]
 
 @export var shop_item_label_settings: LabelSettings
 @export var buy_button_scene: PackedScene
 
-@onready var grid_container_seeds: GridContainer = %"GridContainer Seeds"
-@onready var grid_container_tools: GridContainer = %"GridContainer Tools"
+@onready var grid_container: GridContainer = %GridContainer
 
 
 
 func _ready() -> void:
-	populate_sell_list(grid_container_seeds, seeds)
-	populate_sell_list(grid_container_tools, tools)
+	populate_sell_list()
 
 
-func populate_sell_list(container: GridContainer, items: Array):
+func populate_sell_list():
 	for item: Item in items:
 		var label_name:= Label.new()
 		label_name.label_settings= shop_item_label_settings
 		label_name.text= item.display_name
-		container.add_child(label_name)
+		grid_container.add_child(label_name)
 		
 		var label_cost:= Label.new()
 		label_cost.label_settings= shop_item_label_settings
 		label_cost.text= str("$", item.cost)
-		container.add_child(label_cost)
+		grid_container.add_child(label_cost)
 		
 		var button: Button= buy_button_scene.instantiate()
 		button.pressed.connect(on_buy_item.bind(item))
-		container.add_child(button)
+		grid_container.add_child(button)
 
 
 func on_buy_item(item: Item):

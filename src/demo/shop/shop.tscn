@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://143onre48a04"]
+[gd_scene load_steps=9 format=3 uid="uid://143onre48a04"]
 
 [ext_resource type="Script" uid="uid://dqy4ul0muhn0r" path="res://demo/shop/shop.gd" id="1_xhq2v"]
-[ext_resource type="Script" uid="uid://b6tbapwhgo6f" path="res://demo/planting/seed_item.gd" id="2_7gm1a"]
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="3_d4k7b"]
 [ext_resource type="Script" uid="uid://dkpfu0duh1u0b" path="res://demo/item/item.gd" id="4_uwypk"]
 [ext_resource type="Resource" uid="uid://cpbmk2nju6sjt" path="res://demo/data/hoe_tool.tres" id="5_ycisc"]
@@ -20,8 +19,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Shop" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_xhq2v")
-seeds = Array[ExtResource("2_7gm1a")]([ExtResource("3_d4k7b")])
-tools = Array[ExtResource("4_uwypk")]([ExtResource("5_ycisc")])
+items = Array[ExtResource("4_uwypk")]([ExtResource("3_d4k7b"), ExtResource("5_ycisc")])
 shop_item_label_settings = ExtResource("6_uwypk")
 buy_button_scene = ExtResource("7_ycisc")
 
@@ -54,19 +52,12 @@ horizontal_alignment = 1
 layout_mode = 2
 theme_override_constants/separation = 150
 
-[node name="GridContainer Seeds" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 50
 theme_override_constants/v_separation = 20
-columns = 3
-
-[node name="GridContainer Tools" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_constants/h_separation = 50
-theme_override_constants/v_separation = 20
-columns = 3
+columns = 6
 
 [node name="Button Close" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
