@@ -93,10 +93,10 @@ secondary_action={
 [layer_names]
 
 3d_physics/layer_1="Terrain"
-3d_physics/layer_2="Crop Plot"
-3d_physics/layer_3="Player"
-3d_physics/layer_4="Enemy"
+3d_physics/layer_2="Player"
+3d_physics/layer_3="Enemy"
 3d_physics/layer_5="Structure"
+3d_physics/layer_6="Non-solid Structure"
 3d_physics/layer_8="Item"
 
 [rendering]
