@@ -1,11 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://80vsro5jpxqb"]
+[gd_scene load_steps=20 format=3 uid="uid://80vsro5jpxqb"]
 
 [ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/level.gd" id="1_dh8me"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_r2iv6"]
 [ext_resource type="PackedScene" uid="uid://h6kd1vo71x05" path="res://demo/item/item_instance.tscn" id="3_fn1uh"]
 [ext_resource type="Texture2D" uid="uid://g82x7gl0ajn" path="res://assets/TeamMade/placeholders/grass.png" id="4_qskke"]
 [ext_resource type="PackedScene" uid="uid://bvcnux054nn6a" path="res://demo/player/player.tscn" id="5_0rcdd"]
-[ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="6_fy4m6"]
 [ext_resource type="Script" uid="uid://m46458x0gnw0" path="res://demo/level/terrain_generator.gd" id="7_rl0os"]
 [ext_resource type="Script" uid="uid://ktaugiyoqyqq" path="res://demo/enemy/pathfinder.gd" id="8_xp6m6"]
 [ext_resource type="Resource" uid="uid://cpbmk2nju6sjt" path="res://demo/data/hoe_tool.tres" id="9_fynsk"]
@@ -67,7 +66,6 @@ material = SubResource("StandardMaterial3D_connt")
 [node name="Player" parent="." node_paths=PackedStringArray("level") instance=ExtResource("5_0rcdd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.90000004, 0)
 level = NodePath("..")
-seed_item = ExtResource("6_fy4m6")
 
 [node name="Terrain Generator" type="Node" parent="."]
 script = ExtResource("7_rl0os")
