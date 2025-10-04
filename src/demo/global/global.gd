@@ -1,5 +1,5 @@
 extends Node
 
-var level: DemoLevel
+var level: Level
 var player: Player
 var pathfinder: Pathfinder

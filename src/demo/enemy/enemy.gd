@@ -34,7 +34,7 @@ func arrived_at(target: Vector3)-> bool:
 
 
 func _on_timer_pathfinder_update_timeout() -> void:
-	if not DemoGlobal.player:
+	if not Global.player:
 		return
 	
-	path= DemoGlobal.pathfinder.calculate_path(position, DemoGlobal.player.position)
+	path= Global.pathfinder.calculate_path(position, Global.player.position)

@@ -1,4 +1,4 @@
-class_name DemoLevel
+class_name Level
 extends Node3D
 
 @export var crop_plot_scene: PackedScene
@@ -9,7 +9,7 @@ var structures: Dictionary
 
 
 func _ready() -> void:
-	DemoGlobal.level= self
+	Global.level= self
 
 
 func build_structure(structure_type: StructureType, tile: Vector2i):

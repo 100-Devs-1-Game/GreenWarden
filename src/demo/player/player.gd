@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody3D
 
-@export var level: DemoLevel
+@export var level: Level
 @export var move_speed: float= 5.0
 @export var mouse_sensitivity: float= 0.2
 @export var seed_item: SeedItem
@@ -21,7 +21,7 @@ var equipped_hand_object: HandObject
 
 
 func _ready() -> void:
-	DemoGlobal.player= self
+	Global.player= self
 	
 	Input.mouse_mode= Input.MOUSE_MODE_CAPTURED
 

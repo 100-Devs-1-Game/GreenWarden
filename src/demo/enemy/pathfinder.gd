@@ -3,13 +3,13 @@ extends Node
 
 @export var area: Rect2i
 
-@onready var level: DemoLevel= get_parent()
+@onready var level: Level= get_parent()
 
 var astar:= AStarGrid2D.new()
 
 
 func _ready() -> void:
-	DemoGlobal.pathfinder= self
+	Global.pathfinder= self
 
 	astar.region= area
 	astar.update()

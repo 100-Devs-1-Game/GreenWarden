@@ -7,4 +7,4 @@ var type: StructureType
 
 func _ready() -> void:
 	if type.blocks_path:
-		DemoGlobal.pathfinder.register_structure(self)
+		Global.pathfinder.register_structure(self)

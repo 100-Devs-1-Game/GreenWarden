@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://80vsro5jpxqb"]
 
-[ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/demo_level.gd" id="1_l0y0h"]
+[ext_resource type="Script" uid="uid://2o5ywfvxcipl" path="res://demo/level.gd" id="1_l0y0h"]
 [ext_resource type="PackedScene" uid="uid://c7e2pg8krsqjs" path="res://demo/planting/crop_plot.tscn" id="2_nod2y"]
 [ext_resource type="PackedScene" uid="uid://bvcnux054nn6a" path="res://demo/player/player.tscn" id="3_ibs8o"]
 [ext_resource type="PackedScene" uid="uid://h6kd1vo71x05" path="res://demo/item/item_instance.tscn" id="3_kdojh"]
