@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jbmqf027fu4u"]
+[gd_scene load_steps=17 format=3 uid="uid://jbmqf027fu4u"]
 
 [ext_resource type="Script" uid="uid://bldb2ici47gwi" path="res://demo/enemy/enemy.gd" id="1_128wq"]
 
@@ -34,6 +34,44 @@ size = Vector3(0.1, 0.1, 0.055)
 material = SubResource("StandardMaterial3D_128wq")
 size = Vector3(0.2, 0.7, 0.15)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n563"]
+albedo_color = Color(0.8312579, 0.05815737, 0.18962413, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mhmeh"]
+material = SubResource("StandardMaterial3D_6n563")
+size = Vector3(0.1, 0.1, 0.1)
+
+[sub_resource type="Curve" id="Curve_h8ns6"]
+_data = [Vector2(0, 0.9688717), 0.0, 0.0, 0, 0, Vector2(1, 0.05058372), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_gcy5j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model/Hip:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model/Hip2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_eew3m"]
 resource_name = "walk"
 loop_mode = 1
@@ -61,33 +99,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.34906584, 0, 0), Vector3(0, 0, 0), Vector3(0.34906584, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_gcy5j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Model/Hip:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Model/Hip2:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_565k7"]
@@ -138,6 +149,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, -0.3, 0)
 [node name="Leg" type="MeshInstance3D" parent="Model/Hip2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30000004, 0)
 mesh = SubResource("BoxMesh_fhqtb")
+
+[node name="CPUParticles3D Blood" type="CPUParticles3D" parent="."]
+emitting = false
+amount = 30
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+mesh = SubResource("BoxMesh_mhmeh")
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 5.0
+initial_velocity_max = 10.0
+damping_min = 20.0
+damping_max = 40.0
+scale_amount_curve = SubResource("Curve_h8ns6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

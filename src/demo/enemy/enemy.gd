@@ -5,9 +5,10 @@ extends RigidBody3D
 
 @onready var model: Node3D = $Model
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var blood_particles: CPUParticles3D = $"CPUParticles3D Blood"
 
 var path: PackedVector3Array
-
+var knockback: Vector3
 
 
 func _ready() -> void:
@@ -26,17 +27,26 @@ func _physics_process(delta: float) -> void:
 		#target_pos= path[0]
 		#prints("New target pos", target_pos)
 		
-	linear_velocity= position.direction_to(target_pos) * move_speed
+	var walk_velocity:= position.direction_to(target_pos) * move_speed
 
-	var look_target:= position + linear_velocity.normalized()
+	var look_target:= position + walk_velocity.normalized()
 	look_target.y= model.global_position.y
 	if not model.global_position.is_equal_approx(look_target):
 		model.look_at(look_target)
+
+	linear_velocity= walk_velocity + knockback
+	knockback= knockback.lerp(Vector3.ZERO, delta)
 
 
 func arrived_at(target: Vector3)-> bool:
 	return Vector2(position.x, position.z).distance_to(Vector2(target.x, target.z)) < 11
 
+
+func hurt(from: Vector3):
+	var dir:= from.direction_to(position)
+	knockback= dir * 5
+	blood_particles.emitting= true
+	
 
 func _on_timer_pathfinder_update_timeout() -> void:
 	if not Global.player:

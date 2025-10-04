@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgalvgmpu8qdk"]
+[gd_scene load_steps=6 format=3 uid="uid://cgalvgmpu8qdk"]
 
-[ext_resource type="Script" uid="uid://bjwr75mfcab27" path="res://demo/structures/structure.gd" id="1_bdihd"]
+[ext_resource type="Script" uid="uid://ccpufgopcwni7" path="res://demo/structures/scenes/spike_trap.gd" id="1_bdihd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kfwll"]
 
@@ -14,6 +14,9 @@ material = SubResource("StandardMaterial3D_bdihd")
 top_radius = 0.01
 bottom_radius = 0.1
 height = 0.6
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bdihd"]
+size = Vector3(0.2, 1, 0.2)
 
 [node name="SpikeTrap" type="StaticBody3D"]
 collision_layer = 32
@@ -40,3 +43,13 @@ mesh = SubResource("CylinderMesh_63klp")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.2, 0.25)
 mesh = SubResource("CylinderMesh_63klp")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_bdihd")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
