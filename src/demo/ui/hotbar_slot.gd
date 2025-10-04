@@ -17,10 +17,10 @@ func update():
 	if inv_item:
 		texture_rect.texture= inv_item.item_type.inventory_icon
 		label_amount.text= str(inv_item.amount)
-		label_amount.show()
 	else:
 		texture_rect.texture= null
-		label_amount.hide()
+
+	label_amount.visible= inv_item and inv_item.item_type.can_stack
 
 
 func add_item(new_item: InventoryItem):

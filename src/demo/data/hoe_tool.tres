@@ -10,4 +10,5 @@ scene = ExtResource("1_b4ap3")
 primary_action_anim = "swing_down"
 display_name = "Hoe"
 inventory_icon = ExtResource("1_vmqrl")
+can_stack = false
 metadata/_custom_type_script = "uid://ccdk3776e61rx"

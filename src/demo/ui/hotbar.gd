@@ -38,7 +38,10 @@ func change_absolute(idx: int):
 
 
 func add_item(inv_item: InventoryItem):
-	var slot: HotbarSlot= find_slot_with_type(inv_item.item_type)
+	var slot: HotbarSlot
+	if inv_item.item_type.can_stack:
+		slot= find_slot_with_type(inv_item.item_type)
+
 	if not slot:
 		slot= find_free_slot()
 	slot.add_item(inv_item)
