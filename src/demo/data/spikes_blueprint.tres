@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BlueprintItem" load_steps=4 format=3 uid="uid://df65ma2k7ywah"]
+
+[ext_resource type="Script" uid="uid://cvjdw4tfyr6x5" path="res://demo/item/blueprint_item.gd" id="1_evvtv"]
+[ext_resource type="Texture2D" uid="uid://byfibf4coquhj" path="res://assets/TeamMade/placeholders/spikes.png" id="1_ru6bt"]
+[ext_resource type="Resource" uid="uid://bb34wg08nlpno" path="res://demo/data/spike_trap_structure.tres" id="3_3r0cb"]
+
+[resource]
+script = ExtResource("1_evvtv")
+structure = ExtResource("3_3r0cb")
+display_name = "Spikes"
+inventory_icon = ExtResource("1_ru6bt")
+metadata/_custom_type_script = "uid://cvjdw4tfyr6x5"
