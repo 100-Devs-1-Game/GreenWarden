@@ -42,6 +42,10 @@ func _unhandled_input(event: InputEvent):
 	else:
 		if not event.pressed:
 			return
+
+		var target_obj: Node3D
+		if ray_cast.is_colliding():
+			target_obj= ray_cast.get_collider()
 		
 		if event.is_action("open_shop"):
 			open_shop()
@@ -51,11 +55,14 @@ func _unhandled_input(event: InputEvent):
 			elif event.is_action("secondary_action"):
 				equipped_hand_object.use(false, self)
 		else:
-			if event.is_action("primary_action"):
-				if ray_cast.is_colliding():
-					var target_obj: Node3D= ray_cast.get_collider()
-					if target_obj is CropPlot:
-						interact_with_crop_plot(target_obj)
+			var inv_item: InventoryItem= hotbar.get_selected_inventory_item()
+			if inv_item and inv_item.item_type is BlueprintItem:
+				if event.is_action("primary_action"):
+					if target_obj and target_obj.collision_layer == CollisionLayers.TERRAIN:
+						try_to_build_structure(inv_item)
+			elif event.is_action("primary_action"):
+				if target_obj is CropPlot:
+					interact_with_crop_plot(target_obj)
 
 
 func pick_up_item(item_inst: ItemInstance):
@@ -108,6 +115,15 @@ func try_to_plant(crop_plot: CropPlot, inv_item: InventoryItem):
 func try_to_harvest(crop_plot: CropPlot):
 	if crop_plot.can_harvest():
 		level.spawn_item(crop_plot.harvest(), crop_plot.position + Vector3.UP)
+
+
+func try_to_build_structure(inv_item: InventoryItem):
+	var tile: Vector2i= level.get_tile(ray_cast.get_collision_point())
+	if not level.is_tile_empty(tile):
+		return
+	var blueprint: BlueprintItem= inv_item.item_type
+	level.build_structure(blueprint.structure, tile)
+	hotbar.change_item_amount(inv_item, -1)
 
 
 func open_shop():

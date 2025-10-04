@@ -8,3 +8,7 @@ var type: StructureType
 func _ready() -> void:
 	if type.blocks_path:
 		Global.pathfinder.register_structure(self)
+
+
+func on_placed(player: Player):
+	pass
