@@ -10,5 +10,5 @@ func _ready() -> void:
 		Global.pathfinder.register_structure(self)
 
 
-func on_placed(player: Player):
+func on_placed():
 	pass
