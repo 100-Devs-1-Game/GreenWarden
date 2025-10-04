@@ -21,6 +21,7 @@ func build_structure(structure_type: StructureType, tile: Vector2i):
 	structure.position= get_pos_from_tile(tile)
 	structures[tile]= structure
 	add_child(structure)
+	structure.on_placed()
 
 
 func spawn_item(inv_item: InventoryItem, pos: Vector3):
