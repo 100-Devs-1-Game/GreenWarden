@@ -2,6 +2,7 @@ class_name Hotbar
 extends PanelContainer
 
 signal equip_item(item: Item)
+signal unequip_item()
 
 @onready var slots_parent_node: HBoxContainer = %Slots
 
@@ -67,12 +68,13 @@ func remove_item():
 
 
 func select_slot(idx: int):
+	unequip_item.emit()
 	for slot in slots:
 		slot.deselect()
 	slots[idx].select()
 	
 	var inv_item:= get_selected_inventory_item()
-	if inv_item:
+	if inv_item and inv_item.item_type is HandItem:
 		equip_item.emit(inv_item)
 
 
