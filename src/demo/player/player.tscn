@@ -144,6 +144,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, -0.7, -2.5)
 [node name="Item Holder" type="Node3D" parent="CameraPivot/Camera3D/SubViewportContainer/SubViewport/Hand Offset"]
 unique_name_in_owner = true
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CameraPivot/Camera3D/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
+layers = 3
+sky_mode = 1
+
 [node name="AnimationPlayer Hand" type="AnimationPlayer" parent="CameraPivot/Camera3D/SubViewportContainer"]
 unique_name_in_owner = true
 libraries = {
