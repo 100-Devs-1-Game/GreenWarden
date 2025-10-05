@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://143onre48a04"]
+[gd_scene load_steps=13 format=3 uid="uid://143onre48a04"]
 
 [ext_resource type="Script" uid="uid://dqy4ul0muhn0r" path="res://demo/shop/shop.gd" id="1_xhq2v"]
 [ext_resource type="Resource" uid="uid://c2revt2cprle0" path="res://demo/data/wheat_seed.tres" id="3_d4k7b"]
@@ -7,7 +7,9 @@
 [ext_resource type="Resource" uid="uid://cpbmk2nju6sjt" path="res://demo/data/hoe_tool.tres" id="5_ycisc"]
 [ext_resource type="LabelSettings" uid="uid://wp2onuqok7p2" path="res://demo/shop/shop_item_label_settings.tres" id="6_uwypk"]
 [ext_resource type="Resource" uid="uid://df65ma2k7ywah" path="res://demo/data/spikes_blueprint.tres" id="6_ycisc"]
+[ext_resource type="Resource" uid="uid://dxqf0culs40j6" path="res://demo/data/watering_can.tres" id="7_bf7i3"]
 [ext_resource type="PackedScene" uid="uid://kb5lwqk5esb5" path="res://demo/shop/shop_buy_button.tscn" id="7_ycisc"]
+[ext_resource type="Resource" uid="uid://utjtdue4r0mn" path="res://demo/data/barrel_blueprint.tres" id="8_54kwu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uwypk"]
 bg_color = Color(0.30588236, 0.30588236, 0.30588236, 0.79607844)
@@ -21,7 +23,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Shop" type="CanvasLayer"]
 layer = 2
 script = ExtResource("1_xhq2v")
-items = Array[ExtResource("4_uwypk")]([ExtResource("3_d4k7b"), ExtResource("5_ycisc"), ExtResource("5_uwypk"), ExtResource("6_ycisc")])
+items = Array[ExtResource("4_uwypk")]([ExtResource("3_d4k7b"), ExtResource("5_ycisc"), ExtResource("5_uwypk"), ExtResource("6_ycisc"), ExtResource("7_bf7i3"), ExtResource("8_54kwu")])
 shop_item_label_settings = ExtResource("6_uwypk")
 buy_button_scene = ExtResource("7_ycisc")
 
