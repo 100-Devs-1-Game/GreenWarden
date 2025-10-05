@@ -8,6 +8,7 @@
 script = ExtResource("1_k8v8q")
 scene = ExtResource("1_iugxj")
 primary_action_anim = "swing_down"
+has_secondary_action = true
 secondary_action_anim = "dip"
 display_name = "Watering Can"
 inventory_icon = ExtResource("1_aoejx")
