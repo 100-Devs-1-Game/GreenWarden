@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BlueprintItem" load_steps=4 format=3 uid="uid://utjtdue4r0mn"]
+
+[ext_resource type="Script" uid="uid://cvjdw4tfyr6x5" path="res://demo/item/blueprint_item.gd" id="1_7d6xn"]
+[ext_resource type="Texture2D" uid="uid://d1bpjpidiwerl" path="res://assets/TeamMade/placeholders/barrel.png" id="1_sgy8v"]
+[ext_resource type="Resource" uid="uid://b25jvyu0qemqr" path="res://demo/data/barrel_structure.tres" id="3_w3lpj"]
+
+[resource]
+script = ExtResource("1_7d6xn")
+structure = ExtResource("3_w3lpj")
+display_name = "Barrel"
+inventory_icon = ExtResource("1_sgy8v")
+can_stack = false
+metadata/_custom_type_script = "uid://cvjdw4tfyr6x5"

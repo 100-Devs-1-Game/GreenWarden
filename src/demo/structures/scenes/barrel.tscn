@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://daf3ep8u816fo"]
+
+[ext_resource type="Script" uid="uid://vy0py4civwbx" path="res://demo/structures/scenes/barrel.gd" id="1_68rsg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6mqq"]
+albedo_color = Color(0.9137255, 0.33333334, 0.2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gtum4"]
+albedo_color = Color(0.18598092, 0.18598092, 0.18598092, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ieyt0"]
+transparency = 1
+albedo_color = Color(0.08235294, 0.40784314, 0.4862745, 0.6627451)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_egba7"]
+material = SubResource("StandardMaterial3D_ieyt0")
+top_radius = 0.45
+bottom_radius = 0.45
+height = 0.1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_68rsg"]
+height = 1.0
+
+[node name="Barrel" type="StaticBody3D"]
+collision_layer = 16
+script = ExtResource("1_68rsg")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+height = 1.0
+sides = 16
+material = SubResource("StandardMaterial3D_w6mqq")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100000024, 0)
+operation = 2
+radius = 0.45
+height = 1.0
+sides = 16
+material = SubResource("StandardMaterial3D_gtum4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+mesh = SubResource("CylinderMesh_egba7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CylinderShape3D_68rsg")

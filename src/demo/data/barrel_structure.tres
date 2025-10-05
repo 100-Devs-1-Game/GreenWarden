@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="StructureType" load_steps=3 format=3 uid="uid://b25jvyu0qemqr"]
+
+[ext_resource type="Script" uid="uid://cjnnt4iqvl11g" path="res://demo/structures/structure_type.gd" id="1_2mg2i"]
+[ext_resource type="PackedScene" uid="uid://daf3ep8u816fo" path="res://demo/structures/scenes/barrel.tscn" id="1_164ux"]
+
+[resource]
+script = ExtResource("1_2mg2i")
+scene = ExtResource("1_164ux")
+metadata/_custom_type_script = "uid://cjnnt4iqvl11g"
