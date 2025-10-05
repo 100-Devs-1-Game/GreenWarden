@@ -4,6 +4,8 @@ extends Resource
 @export var item_type: Item
 @export var amount: int= 1
 
+var data: Dictionary
+
 
 
 func _init(_item: Item= null, _amount: int= 1):
