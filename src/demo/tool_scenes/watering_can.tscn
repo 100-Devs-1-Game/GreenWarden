@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1mnmlxnwsh7o"]
+
+[ext_resource type="Script" uid="uid://g3e72lj4300y" path="res://demo/tool_scenes/watering_can.gd" id="1_5uev3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2shwb"]
+albedo_color = Color(0.3167847, 0.31678474, 0.3167847, 1)
+metallic = 0.8
+roughness = 0.2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5uev3"]
+material = SubResource("StandardMaterial3D_2shwb")
+height = 0.765
+
+[sub_resource type="TorusMesh" id="TorusMesh_ia414"]
+material = SubResource("StandardMaterial3D_2shwb")
+inner_radius = 0.2
+outer_radius = 0.3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rcqcg"]
+material = SubResource("StandardMaterial3D_2shwb")
+top_radius = 0.05
+bottom_radius = 0.2
+height = 1.0
+
+[node name="Watering Can" type="Node3D"]
+script = ExtResource("1_5uev3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, -0.7)
+layers = 2
+mesh = SubResource("CylinderMesh_5uev3")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.06085694, 0.9981465, 0, -0.9981465, 0.06085694, 0, 0, 0, 1, 0, -0.10000001, -0.19999999)
+layers = 2
+mesh = SubResource("TorusMesh_ia414")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, -0.10000001, -1.2)
+layers = 2
+mesh = SubResource("CylinderMesh_rcqcg")

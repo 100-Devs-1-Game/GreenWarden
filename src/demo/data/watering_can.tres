@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="HandItem" load_steps=4 format=3 uid="uid://dxqf0culs40j6"]
+
+[ext_resource type="Texture2D" uid="uid://cyqrppl341om0" path="res://Modules/Inventory/watering_can.png" id="1_aoejx"]
+[ext_resource type="PackedScene" uid="uid://c1mnmlxnwsh7o" path="res://demo/tool_scenes/watering_can.tscn" id="1_iugxj"]
+[ext_resource type="Script" uid="uid://ccdk3776e61rx" path="res://demo/item/hand_item.gd" id="1_k8v8q"]
+
+[resource]
+script = ExtResource("1_k8v8q")
+scene = ExtResource("1_iugxj")
+primary_action_anim = "swing_down"
+secondary_action_anim = "dip"
+display_name = "Watering Can"
+inventory_icon = ExtResource("1_aoejx")
+can_stack = false
+metadata/_custom_type_script = "uid://ccdk3776e61rx"
