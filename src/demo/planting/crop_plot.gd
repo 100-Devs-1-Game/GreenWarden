@@ -22,6 +22,11 @@ func harvest()-> InventoryItem:
 	return inv_item
 
 
+func water():
+	#TODO
+	pass
+
+
 func can_harvest()-> bool:
 	if not plant:
 		return false
