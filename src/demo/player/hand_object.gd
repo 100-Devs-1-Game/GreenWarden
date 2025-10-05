@@ -11,6 +11,6 @@ func use(primary_action: bool, player: Player):
 	var anim: String= item_type.primary_action_anim if primary_action else item_type.secondary_action_anim
 
 	if not has_action:
-			return
+		return
 	if anim:
 		player.animation_player_hand.play(anim)
