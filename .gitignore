@@ -6,7 +6,6 @@ builds/
 
 # Godot 4+ specific ignores
 .godot/
-/android/
 .nomedia
 
 # Godot-specific ignores
@@ -14,7 +13,7 @@ builds/
 export.cfg
 export_credentials.cfg
 *.tscn*tmp
-src/addons/
+src/addons/godot-git-plugin
 src/override.cfg
 
 # Imported translations (automatically generated from CSV files)
@@ -33,6 +32,3 @@ mono_crash.*.json
 
 # Rider specific ignores
 .idea/
-
-# Push to backup script for hollowMoon
-pushToBackup.bat
